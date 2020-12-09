@@ -6,7 +6,7 @@ public abstract class Actions {
     private int value;
     private String name;
     private String description;
-    private Boolean isComplete = false;
+    private boolean isComplete = false;
 
 
     public String getName() {

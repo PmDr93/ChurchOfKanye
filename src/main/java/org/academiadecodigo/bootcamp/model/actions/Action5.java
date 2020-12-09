@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class Action5 extends Actions {
 
-    int value = 5;
+    private final int value = 5;
 
 
     @Override

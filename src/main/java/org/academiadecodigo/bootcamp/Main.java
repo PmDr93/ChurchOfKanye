@@ -10,6 +10,8 @@ public class Main {
 
         bootStrap.actionTest();
 
+        bootStrap.deleteUserTest();
+
 
     }
 }
