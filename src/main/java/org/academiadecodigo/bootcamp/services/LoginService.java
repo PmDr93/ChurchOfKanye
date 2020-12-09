@@ -8,33 +8,24 @@ public class LoginService {
     private User userOnLogin;
 
 
-    //get user on Login
-    public User getUserOnLogin() {
-        return this.userOnLogin = userOnLogin;
-    }
-
     //set usergit
     public void setUserService(UserService userService) {
         this.userService = userService;
-
-
     }
 
-    //authenticating user
-    public boolean authenticateUser(Integer id) {
+    public boolean authenticateUser(String username, String password) {
 
         for (User user : userService.getUsersList()) {
-            if (user.getId() == id) {
-                System.out.println("YAY");
+            if (user.getUsername().equals(username) && user.getPassword().equals(password) ) {
+                userOnLogin = user;
                 return true;
             }
         }
-        System.out.println("BUT NO");
         return false;
     }
 
-
-
-
-
+    //get userOnLogin
+    public User getUserOnLogin() {
+        return userOnLogin;
+    }
 }
