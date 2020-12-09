@@ -1,11 +1,15 @@
 package org.academiadecodigo.bootcamp;
 
 import org.academiadecodigo.bootcamp.model.User;
-import org.academiadecodigo.bootcamp.model.actions.ShortAction;
 import org.academiadecodigo.bootcamp.model.actions.Actions;
+import org.academiadecodigo.bootcamp.model.actions.ShortAction;
 import org.academiadecodigo.bootcamp.services.ActionService;
 import org.academiadecodigo.bootcamp.services.UserService;
+
+import java.util.LinkedList;
+import java.util.List;
 import org.academiadecodigo.bootcamp.services.LoginService;
+import org.academiadecodigo.bootcamp.services.UserService;
 
 public class BootStrap {
 
@@ -74,6 +78,33 @@ public class BootStrap {
         loginService.setUserService(userService);
         return loginService.authenticateUser("pedro", "pedrito");
 
+    }
+
+    public void addActionTest() {
+        actionService.addAction(action5.getId(),action5);
+
+        if(actionService.getActionMap().containsValue(action5)){
+            System.out.println("Action Add Sucessfull");
+        }
+        else {
+            System.out.println("Action Add Failed");
+        }
+    }
+
+    public void deleteActionTest() {
+        actionService.deleteAction(action5);
+
+        if(!actionService.getActionMap().containsValue(action5)){
+            System.out.println("Action Delete Sucessfull");
+        }
+        else {
+            System.out.println("Action Delete Failed");
+        }
+    }
+
+    public Actions getActionTest(Integer id) {
+        actionTest();
+        return actionService.getAction(id);
     }
 
 

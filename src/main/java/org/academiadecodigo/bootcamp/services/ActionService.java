@@ -11,6 +11,13 @@ public class ActionService {
 
     private Map<Integer, Actions> actionMap = new HashMap<>();
 
+    public Map<Integer, Actions> getActionMap() {
+        return actionMap;
+    }
+
+    public void setActionMap(Map<Integer, Actions> actionMap) {
+        this.actionMap = actionMap;
+    }
 
     public Actions getAction(Integer id) {
        return actionMap.get(id);
@@ -23,23 +30,5 @@ public class ActionService {
     public void deleteAction(Actions action) {
         actionMap.remove(action.getId());
     }
-
-
-    public Actions getByValue(Integer value) {
-
-        Actions action = null;
-
-      List<Actions> valueList = new ArrayList<>(actionMap.values());
-
-      for(Actions actions : valueList) {
-          if(actions.getValue() > value) {
-              action = actions;
-          }
-      }
-
-      return action;
-    }
-
-
 
 }
