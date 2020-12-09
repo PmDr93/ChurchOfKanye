@@ -2,7 +2,7 @@ package org.academiadecodigo.bootcamp.model.actions;
 
 public class Action10 extends Actions {
 
-    int value = 10;
+    private final int value = 10;
 
     @Override
     public String toString() {

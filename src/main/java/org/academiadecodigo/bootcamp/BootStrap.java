@@ -3,12 +3,16 @@ package org.academiadecodigo.bootcamp;
 import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.model.actions.Action5;
 import org.academiadecodigo.bootcamp.model.actions.Actions;
+import org.academiadecodigo.bootcamp.services.UserService;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class BootStrap {
 
     private User user;
     private Actions action5;
-
+    private UserService userService = new UserService();
 
     public void createUsersTest() {
 
@@ -19,6 +23,8 @@ public class BootStrap {
         user.setUsername("pedro");
         user.setMeter(50);
         user.setPoints(20);
+
+        userService.add(user);
 
         System.out.println(user.toString());
 
@@ -37,4 +43,16 @@ public class BootStrap {
         System.out.println(action5.toString());
 
     }
+
+    public void deleteUserTest() {
+        userService.delete(user);
+
+        if(!userService.getUsersList().contains(user)){
+            System.out.println("Delete Sucessfull");
+        }
+        else {
+            System.out.println("Delete Failed");
+        }
+    }
+
 }

@@ -24,5 +24,14 @@ public class UserService implements UserServiceInterface {
         usersList.add(user);
     }
 
+    @Override
+    public void delete(User user) {
+        usersList.remove(usersList.get(user.getId()-1));
+    }
+
+    @Override
+    public void list() {
+        usersList.forEach(System.out::println);
+    }
 
 }
