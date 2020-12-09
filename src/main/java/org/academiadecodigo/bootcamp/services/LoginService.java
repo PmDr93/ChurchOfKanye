@@ -7,7 +7,7 @@ public class LoginService {
     private UserService userService;
     private User userOnLogin;
 
-    //set user
+    //set usergit
     public void setUserService(UserService userService) {
         this.userService = userService;
 
