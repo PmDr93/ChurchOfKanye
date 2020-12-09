@@ -10,6 +10,6 @@ public class Main {
 
         bootStrap.actionTest();
 
-
+        bootStrap.loginTest(1);
     }
 }

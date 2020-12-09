@@ -3,6 +3,8 @@ package org.academiadecodigo.bootcamp;
 import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.model.actions.Action5;
 import org.academiadecodigo.bootcamp.model.actions.Actions;
+import org.academiadecodigo.bootcamp.services.LoginService;
+import org.academiadecodigo.bootcamp.services.UserService;
 
 public class BootStrap {
 
@@ -37,4 +39,17 @@ public class BootStrap {
         System.out.println(action5.toString());
 
     }
+
+    public void loginTest(Integer id) {
+
+        LoginService loginService = new LoginService();
+        UserService userService = new UserService();
+        loginService.setUserService(userService);
+        userService.add(user);
+        loginService.authenticateUser(id);
+
+
+    }
+
+
 }

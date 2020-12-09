@@ -5,14 +5,33 @@ import org.academiadecodigo.bootcamp.model.User;
 public class LoginService {
 
     private UserService userService;
+    private User userOnLogin;
 
     //set user
     public void setUserService(UserService userService) {
         this.userService = userService;
+
+
     }
 
-    user
+    //authenticating user
+    public boolean authenticateUser(Integer id) {
 
+        for (User user : userService.getUsersList()) {
+            if (user.getId() == id) {
+                System.out.println("YAY");
+                return true;
+            }
+        }
+        System.out.println("BUT NO");
+        return false;
+    }
+
+
+    //get user on Login
+    public User getUserOnLogin() {
+        return this.userOnLogin = userOnLogin;
+    }
 
 
 }
