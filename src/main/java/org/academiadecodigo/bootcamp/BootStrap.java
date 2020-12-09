@@ -1,6 +1,7 @@
 package org.academiadecodigo.bootcamp;
 
 import org.academiadecodigo.bootcamp.model.User;
+import org.academiadecodigo.bootcamp.model.actions.Action10;
 import org.academiadecodigo.bootcamp.model.actions.Action5;
 import org.academiadecodigo.bootcamp.model.actions.Actions;
 import org.academiadecodigo.bootcamp.services.ActionService;
@@ -19,7 +20,6 @@ public class BootStrap {
     private ActionService actionService = new ActionService();
 
     public void createUsersTest() {
-
         user = new User();
         user.setId(1);
         user.setFirstName("Pedro");
@@ -43,6 +43,8 @@ public class BootStrap {
         action5.setName("Help Lady");
         action5.setDescription("Help old lady");
         action5.setComplete(true);
+
+        addActionTest();
 
         System.out.println(action5.toString());
 
@@ -78,7 +80,33 @@ public class BootStrap {
         loginService.setUserService(userService);
         return loginService.authenticateUser("pedro", "pedrito");
 
+    }
 
+    public void addActionTest() {
+        actionService.addAction(action5.getId(),action5);
+
+        if(actionService.getActionMap().containsValue(action5)){
+            System.out.println("Action Add Sucessfull");
+        }
+        else {
+            System.out.println("Action Add Failed");
+        }
+    }
+
+    public void deleteActionTest() {
+        actionService.deleteAction(action5);
+
+        if(!actionService.getActionMap().containsValue(action5)){
+            System.out.println("Action Delete Sucessfull");
+        }
+        else {
+            System.out.println("Action Delete Failed");
+        }
+    }
+
+    public Actions getActionTest(Integer id) {
+        actionTest();
+        return actionService.getAction(id);
     }
 
 
