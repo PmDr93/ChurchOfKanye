@@ -8,6 +8,7 @@
     <artifactId>test</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
+    <name>Kanye Church</name>
 
 
     <properties>
@@ -122,11 +123,11 @@
                 </configuration>
             </plugin>
 
-            <plugin>
+            <!-- <plugin>
                 <groupId>com.heroku</groupId>
                 <artifactId>webapp-runner</artifactId>
                 <version>9.0.30.0</version>
-            </plugin>
+            </plugin> -->
 
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
