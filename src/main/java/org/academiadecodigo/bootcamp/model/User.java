@@ -6,6 +6,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String username;
+    private String password;
     private int meter;
     private int points;
 
@@ -59,6 +60,14 @@ public class User {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
