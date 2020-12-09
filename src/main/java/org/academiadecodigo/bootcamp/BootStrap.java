@@ -24,7 +24,7 @@ public class BootStrap {
         user.setMeter(50);
         user.setPoints(20);
 
-        userService.add(user);
+        addUser();
 
         System.out.println(user.toString());
 
@@ -42,6 +42,17 @@ public class BootStrap {
 
         System.out.println(action5.toString());
 
+    }
+
+    public void addUser() {
+        userService.add(user);
+
+        if(userService.getUsersList().contains(user)){
+            System.out.println("Add Sucessfull");
+        }
+        else {
+            System.out.println("Add Failed");
+        }
     }
 
     public void deleteUserTest() {
