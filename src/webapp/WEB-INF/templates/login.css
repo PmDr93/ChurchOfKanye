@@ -1,6 +1,6 @@
 body {
     background-color: #8C8D8F;
-    background-image: url('resources/kanye-signup.png');
+    background-image: url('resources/kanyeback1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -11,38 +11,29 @@ body {
     margin: auto;
     text-align: center;
 }
-
-h2 {
-    color: #fff;
-    font-family: 'Abel', sans-serif;
-    font-weight: bold;
-    font-size: xx-large;
-    line-height: 1.5;
-    margin: auto;
-    text-align: center;
-    color: #fff;
-}
-
 #test {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 }
+
 
 img {
     margin-bottom: 2%;
     margin-top: 2%;
-    animation-name: floating;
+    animation-name: zoom;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
 
-@keyframes floating { 
-    0% { transform: translate(0,  0px); } 
-    50%  { transform: translate(0, 15px); } 
-    100%   { transform: translate(0, -0px); }    
-}
+@keyframes zoom {
+    0%, 100%{
+      transform: scale(0.7);
+    }
+    50%{
+      transform: scale(1);
+    }
+  }
 
