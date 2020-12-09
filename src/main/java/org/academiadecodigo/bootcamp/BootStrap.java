@@ -32,7 +32,6 @@ public class BootStrap {
         action5.setName("Help Lady");
         action5.setDescription("Help old lady");
         action5.setComplete(true);
-        action5.setValue(5);
 
         System.out.println(action5.toString());
 
