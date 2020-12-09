@@ -8,5 +8,8 @@ import java.io.IOException;
 public class Action5 extends Actions {
 
 
-
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
