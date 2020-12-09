@@ -45,7 +45,6 @@ public abstract class Actions {
     public String toString() {
         return "Actions{" +
                 "id=" + id +
-                ", value=" + value +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", isComplete=" + isComplete +
