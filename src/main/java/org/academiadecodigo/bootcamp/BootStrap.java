@@ -1,7 +1,7 @@
 package org.academiadecodigo.bootcamp;
 
 import org.academiadecodigo.bootcamp.model.User;
-import org.academiadecodigo.bootcamp.model.actions.Action5;
+import org.academiadecodigo.bootcamp.model.actions.ShortAction;
 import org.academiadecodigo.bootcamp.model.actions.Actions;
 import org.academiadecodigo.bootcamp.services.ActionService;
 import org.academiadecodigo.bootcamp.services.UserService;
@@ -33,7 +33,7 @@ public class BootStrap {
     }
 
     public void actionTest() {
-        action5 = new Action5();
+        action5 = new ShortAction();
 
         action5.setId(1);
         action5.setName("Help Lady");
