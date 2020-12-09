@@ -4,9 +4,17 @@ public abstract class Actions {
 
     private int id;
     private int value;
+    private String name;
     private String description;
-    private Boolean isComplete;
+    private Boolean isComplete = false;
 
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
     public int getId() {
         return id;
     }
