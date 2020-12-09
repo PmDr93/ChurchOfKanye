@@ -1,5 +1,9 @@
 package org.academiadecodigo.bootcamp;
 
+import org.academiadecodigo.bootcamp.controller.ActionController;
+import org.academiadecodigo.bootcamp.controller.LoginController;
+import org.academiadecodigo.bootcamp.controller.MainController;
+import org.academiadecodigo.bootcamp.controller.UserController;
 import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.model.actions.Actions;
 import org.academiadecodigo.bootcamp.model.actions.ShortAction;
@@ -17,6 +21,10 @@ public class BootStrap {
     private Actions action5;
     private UserService userService = new UserService();
     private ActionService actionService = new ActionService();
+    private MainController mainController = new MainController();
+    private UserController userController = new UserController();
+    private LoginController loginController = new LoginController();
+    private ActionController actionController = new ActionController();
 
     public void createUsersTest() {
 
@@ -105,6 +113,10 @@ public class BootStrap {
     public Actions getActionTest(Integer id) {
         actionTest();
         return actionService.getAction(id);
+    }
+
+    public void MainControllerTest() {
+        System.out.println(mainController.homePage());
     }
 
 
