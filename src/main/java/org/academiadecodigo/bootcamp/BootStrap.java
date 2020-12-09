@@ -7,6 +7,8 @@ import org.academiadecodigo.bootcamp.services.UserService;
 
 import java.util.LinkedList;
 import java.util.List;
+import org.academiadecodigo.bootcamp.services.LoginService;
+import org.academiadecodigo.bootcamp.services.UserService;
 
 public class BootStrap {
 
@@ -64,5 +66,17 @@ public class BootStrap {
             System.out.println("Delete Failed");
         }
     }
+
+    public void loginTest(Integer id) {
+
+        LoginService loginService = new LoginService();
+        UserService userService = new UserService();
+        loginService.setUserService(userService);
+        userService.add(user);
+        loginService.authenticateUser(id);
+
+
+    }
+
 
 }

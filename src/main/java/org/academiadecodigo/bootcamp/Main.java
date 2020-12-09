@@ -10,8 +10,12 @@ public class Main {
 
         bootStrap.actionTest();
 
+<<<<<<< HEAD
         bootStrap.deleteUserTest();
 
 
+=======
+        bootStrap.loginTest(1);
+>>>>>>> step2-services
     }
 }

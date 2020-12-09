@@ -13,8 +13,6 @@ public class User {
 
 
     //getters and setters
-
-
     public int getId() {
         return id;
     }
