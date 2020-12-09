@@ -1,6 +1,6 @@
 package org.academiadecodigo.bootcamp.model.actions;
 
-public class Action10 extends Actions {
+public class LongAction extends Actions {
 
     private final int value = 10;
 

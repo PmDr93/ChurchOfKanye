@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 
-public class Action5 extends Actions {
+public class ShortAction extends Actions {
 
     private final int value = 5;
 
