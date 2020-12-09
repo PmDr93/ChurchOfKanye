@@ -9,21 +9,23 @@ public class User {
     private int meter;
     private int points;
 
+    public User() {}
+
 
     //getters and setters
-    public int getId() {
+    public int getId(int i) {
         return id;
     }
     public void setId(int id) {
         this.id = id;
     }
-    public String getFirstName() {
+    public String getFirstName(String pedro) {
         return firstName;
     }
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-    public String getLastName() {
+    public String getLastName(String s) {
         return lastName;
     }
     public void setLastName(String lastName) {
@@ -46,5 +48,17 @@ public class User {
     }
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", username='" + username + '\'' +
+                ", meter=" + meter +
+                ", points=" + points +
+                '}';
     }
 }

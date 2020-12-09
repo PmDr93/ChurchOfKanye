@@ -41,4 +41,14 @@ public abstract class Actions {
     }
 
 
+    @Override
+    public String toString() {
+        return "Actions{" +
+                "id=" + id +
+                ", value=" + value +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", isComplete=" + isComplete +
+                '}';
+    }
 }
