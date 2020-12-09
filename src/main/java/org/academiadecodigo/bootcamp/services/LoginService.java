@@ -7,6 +7,12 @@ public class LoginService {
     private UserService userService;
     private User userOnLogin;
 
+
+    //get user on Login
+    public User getUserOnLogin() {
+        return this.userOnLogin = userOnLogin;
+    }
+
     //set usergit
     public void setUserService(UserService userService) {
         this.userService = userService;
@@ -28,10 +34,7 @@ public class LoginService {
     }
 
 
-    //get user on Login
-    public User getUserOnLogin() {
-        return this.userOnLogin = userOnLogin;
-    }
+
 
 
 }

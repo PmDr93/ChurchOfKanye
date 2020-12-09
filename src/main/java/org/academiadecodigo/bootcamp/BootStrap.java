@@ -4,11 +4,7 @@ import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.model.actions.Action5;
 import org.academiadecodigo.bootcamp.model.actions.Actions;
 import org.academiadecodigo.bootcamp.services.UserService;
-
-import java.util.LinkedList;
-import java.util.List;
 import org.academiadecodigo.bootcamp.services.LoginService;
-import org.academiadecodigo.bootcamp.services.UserService;
 
 public class BootStrap {
 
@@ -70,9 +66,7 @@ public class BootStrap {
     public void loginTest(Integer id) {
 
         LoginService loginService = new LoginService();
-        UserService userService = new UserService();
         loginService.setUserService(userService);
-        userService.add(user);
         loginService.authenticateUser(id);
 
 
