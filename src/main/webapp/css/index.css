@@ -17,8 +17,8 @@ h3 {
     color: #fff;
     font-family: 'Abel', sans-serif;
     font-weight: bold;
-    line-height: 1.5;
-    margin: auto;
+    line-height: 1.5em;
+    margin: 1em;
     text-align: center;
     color: #fff;
   }
@@ -26,8 +26,9 @@ h3 {
 .buttons {
     display: flex;
     flex-direction: row;
+    width: 30%;
     align-items: center;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
 }
 
 .login {

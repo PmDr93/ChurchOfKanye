@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="css/index.css">
+
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+
 </head>
 
 <body>
@@ -15,15 +17,11 @@
         <img src="resources/kanye-welcome.png" alt="The Church of Kanye Welcome Screen">
         <br>
         <h3>Are you already a believer?</h3>
-        <br>
 
         <div class="buttons">
-            <div class="login">
-                <a th:href="@{/login}">Login</a></a>
-            </div>
-            <div class="signup">
-                <a th:href="@{/signup}">Sign-Up</a></a>
-            </div>
+                <a class="login" th:href="@{/login}">Login</a>
+
+                <a class="signup" th:href="@{/signup}">Sign-Up</a>
         </div>
 
 </body>

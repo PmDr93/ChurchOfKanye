@@ -45,7 +45,7 @@ public class LoginController {
 
 
     //authenticate user and get page of user
-    @RequestMapping(method = RequestMethod.GET, path = "/login/{username}")
+    @RequestMapping(method = RequestMethod.POST, path = "/login/{username}")
     public String authenticateUser(@ModelAttribute String username, @ModelAttribute String pass, @ModelAttribute Integer id, Model model) {
 
         if (loginService.authenticateUser(username, pass)) {

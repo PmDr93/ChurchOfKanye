@@ -7,11 +7,19 @@ public class User {
     private String lastName;
     private String username;
     private String password;
+    private String email;
     private int meter;
     private int points;
 
     public User() {}
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     //getters and setters
     public int getId() {
