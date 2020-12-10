@@ -80,6 +80,12 @@ public class UserController {
 
     public void getAction(Integer id) {
         userService.getActionList(id).add(actionController.getAction());
+
+    }
+
+    public String listUserActions(Model model, @PathVariable Integer id) {
+        model.addAttribute("user", userService.getActionList(userService.getUser(id).getId()));
+        return "actionlist";
     }
 
 }

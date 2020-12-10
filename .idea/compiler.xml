@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="test" target="10" />
+      <module name="hackaton-anderdogs" target="10" />
     </bytecodeTargetLevel>
   </component>
 </project>

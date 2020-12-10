@@ -50,7 +50,7 @@ public class BootStrap {
 
         action5.setId(1);
         action5.setName("Help Lady");
-        action5.setDescription("Help old lady");
+        action5.setDescription("Help an old lady (or man) cross the street!");
         action5.setComplete(true);
 
         System.out.println(action5.toString());
@@ -138,21 +138,21 @@ public class BootStrap {
         shortAction.setId(2);
         shortAction.setDescription("Teste 2");
 
-        longAction1.setName("Teste1");
+        longAction1.setName("Teste3");
         longAction1.setId(3);
-        longAction1.setDescription("Teste 1");
+        longAction1.setDescription("Teste 3");
 
-        shortAction1.setName("Teste2");
+        shortAction1.setName("Teste4");
         shortAction1.setId(4);
-        shortAction1.setDescription("Teste 2");
+        shortAction1.setDescription("Teste 4");
 
-        longAction2.setName("Teste1");
+        longAction2.setName("Teste5");
         longAction2.setId(5);
-        longAction2.setDescription("Teste 1");
+        longAction2.setDescription("Teste 5");
 
-        shortAction2.setName("Teste2");
+        shortAction2.setName("Teste6");
         shortAction2.setId(6);
-        shortAction2.setDescription("Teste 2");
+        shortAction2.setDescription("Teste 6");
 
         actionService.addAction(1,longAction);
         actionService.addAction(2,shortAction);
@@ -160,7 +160,6 @@ public class BootStrap {
         actionService.addAction(4, shortAction1);
         actionService.addAction(5, longAction2);
         actionService.addAction(6, shortAction2);
-
 
         actionController.setActionService(actionService);
 
