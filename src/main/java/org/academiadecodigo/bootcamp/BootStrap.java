@@ -165,7 +165,7 @@ public class BootStrap {
 
     }
 
-    public void UserGetAction() {
+    /*public void UserGetAction() {
 
         userController.setUserService(userService);
         actionController.setActionService(actionService);
@@ -175,7 +175,7 @@ public class BootStrap {
 
         System.out.println(userService.getActionList(1));
 
-    }
+    }*/
 
 
 }
