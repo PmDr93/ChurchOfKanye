@@ -12,7 +12,6 @@ public class Main {
 
         bootStrap.deleteUserTest();
 
-        System.out.println(bootStrap.loginTest());
 
     }
 }
