@@ -66,7 +66,7 @@ public class BootStrap {
     }
 
     public void deleteUserTest() {
-        userService.delete(user);
+        userService.delete(user.getId());
 
         if(!userService.getUsersList().contains(user)){
             System.out.println("Delete Sucessfull");

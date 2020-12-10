@@ -1,5 +1,7 @@
 package org.academiadecodigo.bootcamp.controller;
 
+import org.academiadecodigo.bootcamp.DTO.UserDto;
+import org.academiadecodigo.bootcamp.converters.DtoToUser;
 import org.academiadecodigo.bootcamp.converters.UserToDto;
 import org.academiadecodigo.bootcamp.persistence.model.*;
 import org.academiadecodigo.bootcamp.services.LoginService;
@@ -7,7 +9,11 @@ import org.academiadecodigo.bootcamp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.validation.Valid;
 
 @Controller
 @SessionAttributes("user")
@@ -16,6 +22,7 @@ public class LoginController {
     private LoginService loginService;
     private UserService userService;
     private UserToDto userToDto;
+    private DtoToUser dtoToUser;
 
     @Autowired
     //Set Login Service
@@ -28,12 +35,21 @@ public class LoginController {
         this.userService = userService;
     }
 
+    @Autowired
+    public void setDtoToUser(DtoToUser dtoToUser) {
+        this.dtoToUser = dtoToUser;
+    }
+
+    @Autowired
+    public void setUserToDto(UserToDto userToDto) {
+        this.userToDto = userToDto;
+    }
 
     //get sign up page
     @RequestMapping(method = RequestMethod.GET, path = "/signup")
     public String signUpButton(Model model) {
 
-        model.addAttribute("user", new User());
+        model.addAttribute("user", userToDto.convert(new User()));
 
         return "sign-up";
     }
@@ -44,14 +60,20 @@ public class LoginController {
         return "redirect:/";
     }
 
-    //cancel button from sign-up
+    //add new user
     @RequestMapping(method = RequestMethod.POST, path = "/signup", params = "action=save")
-    public String signUpButtonRedirect(@ModelAttribute("user") User user) {
+    public String signUpButtonRedirect(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
-        User user1 = userService.getUser(user.getId());
+        if (bindingResult.hasErrors()) {
+            return "sign-up";
+        }
+
+        User user = dtoToUser.convert(userDto);
+        userService.add(user);
+        redirectAttributes.addFlashAttribute("lastAction", "You have been added to our community");
 
 
-        return "redirect:/main" + user1.getId();
+        return "redirect:/main/" + user.getId();
     }
 
     //get page login
@@ -68,12 +90,14 @@ public class LoginController {
 
 
     //authenticate user and get page of user
-    @RequestMapping(method = RequestMethod.POST, path = "/login", params = "action=getUserPage")
+    @RequestMapping(method = RequestMethod.POST, path = "/user", params = "action=getUserPage")
     public String authenticateUser(Model model, @ModelAttribute String username, @ModelAttribute String pass) {
 
         if (loginService.authenticateUser(username, pass)) {
-            model.addAttribute("user", loginService.getUserOnLogin());
-            return "redirect:/main" + loginService.getUserOnLogin().getId();
+
+            UserDto userDto = userToDto.convert(loginService.getUserOnLogin());
+            model.addAttribute("user", userDto);
+            return "redirect:/main/" + userDto.getId();
         }
 
         return "login";
@@ -84,9 +108,11 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public String getUserPage(@PathVariable Integer id, Model model) {
 
-        model.addAttribute("user", userService.getUser(id));
+        UserDto userDto = userToDto.convert(userService.getUser(id));
 
-        return "login";
+        model.addAttribute("user", userDto);
+
+        return "main" + userDto.getId();
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/list")

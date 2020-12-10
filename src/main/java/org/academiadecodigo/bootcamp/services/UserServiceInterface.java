@@ -2,6 +2,8 @@ package org.academiadecodigo.bootcamp.services;
 
 import org.academiadecodigo.bootcamp.persistence.model.*;
 
+import java.util.List;
+
 
 public interface UserServiceInterface {
 
@@ -9,8 +11,8 @@ public interface UserServiceInterface {
 
     void add(User user);
 
-    void delete(User user);
+    void delete(Integer id);
 
-    void list();
+    List<User> getUsersList();
 
 }

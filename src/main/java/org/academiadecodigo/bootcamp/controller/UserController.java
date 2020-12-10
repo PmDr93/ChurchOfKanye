@@ -38,7 +38,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET, path = "/delete/{id}")
     public String deleteUser(@PathVariable Integer id) {
 
-        userService.delete(userService.getUser(id));
+        userService.delete(id);
 
         return "redirect:/index";
     }
@@ -75,8 +75,5 @@ public class UserController {
         return "actionlist";
     }
 
-    public void getAction(Integer id) {
-        userService.getActionList(id).add(actionController.getAction());
-    }
 
 }

@@ -2,16 +2,40 @@ package org.academiadecodigo.bootcamp.DTO;
 
 import org.academiadecodigo.bootcamp.persistence.model.actions.Actions;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 public class UserDto {
 
     private Integer id;
+
+    @NotNull(message = "You need a First Name")
+    @NotBlank(message = "You need a First Name")
+    @Size(min=3, max=30)
     private String firstName;
+
+    @NotNull(message = "You need a Last Name")
+    @NotBlank(message = "You need a Last Name")
+    @Size(min=3, max=30)
     private String lastName;
+
+    @NotNull(message = "You need a Username")
+    @NotBlank(message = "You need a Username")
+    @Size(min=3, max=40)
     private String username;
+
+    @NotNull(message = "You need a Password")
+    @NotBlank(message = "You need a Password")
+    @Size(min=3, max=50)
     private String password;
+
+    @Email
     private String email;
+
+
     private List<Actions> actionsList;
     private int meterPercent;
     private int points;
