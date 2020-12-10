@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +11,12 @@
 <body>
 
     <ul>
-        <li><a href="#user">User Settings</a></li>
-        <li><a href="#list">Road to Heaven</a></li> 
+        <li><a th:href="@{/edit}">User Settings</a></li>
+        <li><a th:href="@{/ranking}">Road to Heaven</a></li>
         <li><a class="button" href="#popup1">Current Challenge</a></li>
-        <li><a href="submit.html">Submit Challenge</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li style="float:right"><a class="active" href="index.html">Log-out</a></li>
+        <li><a th:href="@{/uploadimage}">Submit Challenge</a></li>
+        <li><a th:href="@{/aboutchurchofkanye}">About Us</a></li>
+        <li style="float:right"><a class="active" th:href="@{/}">Log-out</a></li>
     </ul>
 
     <div class="container">
@@ -26,10 +26,10 @@
                 
                 <div class="progress orange">
 
-                    <div class="progress-bar meter" style="width:20%; background:#fe3b3b;">
+                    <div class="progress-bar meter" th:style="|width:${user.meterPercent}%; background:#fe3b3b;|">
 
                         <div class="progress-value"><img src="resources/kanye-hell.png"/></div>
-                        <div class="progress-percentage">90%</div>
+                        <div class="progress-percentage" th:text="${user.meterPercent + '%'}"></div>
                     </div>
 
                 </div>
