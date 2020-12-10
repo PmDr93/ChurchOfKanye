@@ -18,7 +18,7 @@
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
     <bean class="java.net.URI" id="dbUrl">
-        <constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
+        <constructor-arg value="postgres://czuvyuqbhibjmg:4d62b71079244caffa49c6dad0a4ea2a766cf41c59dbc3dd364db21f8e631019@ec2-52-31-94-195.eu-west-1.compute.amazonaws.com:5432/d7io1cd8vis3up"/>
     </bean>
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
