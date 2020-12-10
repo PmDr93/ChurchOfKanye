@@ -1,47 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/tx/spring-tx.xsd"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:tx="http://www.springframework.org/schema/tx">
 
-    <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xmlns="http://www.springframework.org/schema/beans" xmlns:tx="http://www.springframework.org/schema/tx"
-           xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
+        <!-- Enable support for JPA annotations -->
+        <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
-
-        <tx:annotation-driven transaction-manager="transactionManager"/>
-
-        <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-            <property name="entityManagerFactory" ref="emFactory" />
+        <!-- H2 console -->
+        <bean id="h2WebServer" class="org.h2.tools.Server" factory-method="createWebServer" init-method="start"
+              destroy-method="stop">
+            <constructor-arg value="-web,-webAllowOthers,-webDaemon,-webPort,${dev.h2.port}"/>
         </bean>
 
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+            <property name="driverClassName" value="org.h2.Driver"/>
+            <property name="url" value="jdbc:h2:${dev.h2.location}/${dev.jdbc.database}"/>
+            <property name="username" value="sa"/>
+            <property name="password" value=""/>
+        </bean>
 
+        <bean id="emFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 
-    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+            <property name="dataSource" ref="dataSource"/>
+            <property name="packagesToScan" value="org.academiadecodigo.bootcamp.persistence.model"/>
+            <property name="jpaVendorAdapter">
+                <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+            </property>
+            <property name="jpaProperties">
+                <map>
+                    <entry key="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+                    <entry key="hibernate.show_sql" value="false" />
+                    <entry key="hibernate.hbm2ddl.auto" value="create"/>
 
-    <bean class="java.net.URI" id="dbUrl">
-        <constructor-arg value="postgres://czuvyuqbhibjmg:4d62b71079244caffa49c6dad0a4ea2a766cf41c59dbc3dd364db21f8e631019@ec2-52-31-94-195.eu-west-1.compute.amazonaws.com:5432/d7io1cd8vis3up"/>
+                    <!-- Insert test data if dev.schema.auto property set to create -->
+                    <entry key="hibernate.hbm2ddl.import_files" value="db/test-data.sql"/>
+                    <entry key="hibernate.hbm2ddl.import_files_sql_extractor"
+                           value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor"/>
+
+                </map>
+            </property>
+        </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="emFactory" />
     </bean>
-
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <property name="driverClass" value="org.postgresql.Driver"/>
-        <property name="jdbcUrl" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
-        <property name="user" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
-        <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
-    </bean>
-
-    <bean id="emFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="org.academiadecodigo.javabank.persistence.model"/>
-        <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
-        </property>
-        <property name="jpaProperties">
-            <map>
-                <entry key="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
-                <!-- Run as create once to initialize the schema -->
-                <entry key="hibernate.hbm2ddl.auto" value="create"/>
-            </map>
-        </property>
-    </bean>
-
-
 </beans>
+
