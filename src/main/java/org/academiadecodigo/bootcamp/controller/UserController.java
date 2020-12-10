@@ -33,9 +33,8 @@ public class UserController {
 
         userService.delete(userService.getUser(id));
 
-        return "redirect:/main/index";
+        return "redirect:/index";
     }
-
 
 
     @RequestMapping(method = RequestMethod.GET, path = "/edituser1/{id}")
