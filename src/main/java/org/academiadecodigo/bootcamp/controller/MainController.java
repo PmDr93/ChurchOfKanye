@@ -15,4 +15,11 @@ public class MainController {
     }
 
 
+    //get page about us
+    @RequestMapping(method = RequestMethod.GET, path = "/aboutchurchofkanye")
+    public String getLoginPage() {
+        return "aboutus";
+    }
+
+
 }
