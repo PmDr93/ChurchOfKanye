@@ -53,7 +53,7 @@ public class LoginController {
             return "user/userpage";
         }
 
-        return "redirect:/main/login";
+        return "redirect:/login";
     }
 
 

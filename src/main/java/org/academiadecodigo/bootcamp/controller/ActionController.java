@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp.controller;
 
+import org.academiadecodigo.bootcamp.model.actions.Actions;
 import org.academiadecodigo.bootcamp.services.ActionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,19 +23,12 @@ public class ActionController {
         this.actionService = actionService;
     }
 
+    public Actions getAction() {
 
-    //see the actions list the user has to do
-    @RequestMapping(method = RequestMethod.GET, path = "/list")
-    public String actionsList(Model model, @PathVariable Integer id) {
+        double num  = Math.ceil(Math.random()*5);
+        int  num2 = (int)num;
 
-        model.addAttribute("action5", actionService.getAction(id));
-        model.addAttribute("action10", actionService.getAction(id));
-
-        return "actionlist";
+        return actionService.getAction(num2);
     }
-
-
-
-
 
 }

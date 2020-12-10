@@ -1,5 +1,10 @@
 package org.academiadecodigo.bootcamp.model;
 
+import org.academiadecodigo.bootcamp.model.actions.Actions;
+
+import java.util.LinkedList;
+import java.util.List;
+
 public class User {
 
     private int id;
@@ -9,6 +14,7 @@ public class User {
     private String password;
     private int meter;
     private int points;
+    private List<Actions> actionsList = new LinkedList<>();
 
     public User() {}
 
@@ -55,6 +61,10 @@ public class User {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Actions> getActionsList() {
+        return actionsList;
     }
 
     @Override
