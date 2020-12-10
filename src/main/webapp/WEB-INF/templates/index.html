@@ -1,28 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-
+    <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-
 </head>
 
 <body>
-
+    <header>
+            
         <img src="resources/kanye-welcome.png" alt="The Church of Kanye Welcome Screen">
         <br>
         <h3>Are you already a believer?</h3>
+        <br>
 
         <div class="buttons">
-                <a class="login" th:href="@{/login}">Login</a>
-
-                <a class="signup" th:href="@{/signup}">Sign-Up</a>
+            <div class="login">
+                <a href="main.html">Log-in</a>
+            </div>
+            <div class="signup">
+                <a href="sign-up.html">Sign up</a>
+            </div>
+            <div class="aboutus">
+                <a href="aboutus.html">About us</a>
+            </div> 
         </div>
-
 </body>
 </html>
