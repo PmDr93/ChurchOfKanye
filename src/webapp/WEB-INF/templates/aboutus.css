@@ -23,8 +23,14 @@ h3 {
     color: #fff;
   }
 
-.button {
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.link {
     background-color: lightgray;
     border: none;
     color: black;
@@ -37,7 +43,26 @@ h3 {
     width: 250px;
 }
 
-.button:hover {
+.link:hover {
+    background-color: #F7D3C5;
+    color:black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.back {
+    background-color: lightgray;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    width: 250px;
+}
+
+.back:hover {
     background-color: #F7D3C5;
     color:black;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
