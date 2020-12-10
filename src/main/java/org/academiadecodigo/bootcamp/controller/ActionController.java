@@ -1,6 +1,7 @@
 package org.academiadecodigo.bootcamp.controller;
 
 import org.academiadecodigo.bootcamp.services.ActionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ public class ActionController {
 
 
     //set action Service
+    @Autowired
     public void setActionService(ActionService actionService) {
         this.actionService = actionService;
     }

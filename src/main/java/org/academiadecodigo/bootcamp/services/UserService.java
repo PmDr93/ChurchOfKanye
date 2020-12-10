@@ -1,10 +1,12 @@
 package org.academiadecodigo.bootcamp.services;
 
 import org.academiadecodigo.bootcamp.model.User;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class UserService implements UserServiceInterface {
 
     private List<User> usersList = new ArrayList<>();

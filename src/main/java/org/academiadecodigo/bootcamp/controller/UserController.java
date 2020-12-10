@@ -3,6 +3,7 @@ package org.academiadecodigo.bootcamp.controller;
 import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.services.UserService;
 import org.academiadecodigo.bootcamp.services.UserServiceInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,6 +21,7 @@ public class UserController {
 
 
     //set user service
+    @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
@@ -44,7 +46,7 @@ public class UserController {
         return "edituser";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/edituser/{id}")
+    @RequestMapping(method = RequestMethod.GET, path = "/edituser/{id}/edit")
     public String updateInfoUser(@ModelAttribute User user, @PathVariable Integer id, RedirectAttributes redirectAttributes, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {

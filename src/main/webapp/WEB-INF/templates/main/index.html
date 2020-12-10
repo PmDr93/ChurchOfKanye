@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+            
+        <img src="resources/kanye-welcome.png" alt="The Church of Kanye Welcome Screen">
+        <br>
+        <h3>Are you already a believer?</h3>
+
+    </header>
+        <br>
+
+        <div class="buttons">
+
+            <div class="login">
+                <a th:href="@{/login}" role="button">Log-in</a>
+            </div>
+
+            <div class="signup">
+                <a th:href="@{/signup}" role="button">Sign up</a>
+            </div>
+
+        </div>
+
+</body>
+</html>
