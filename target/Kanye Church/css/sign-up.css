@@ -4,12 +4,13 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    color: #fff;
+    color: black;
     font-family: 'Abel', sans-serif;
     font-weight: bold;
     line-height: 1.5;
     margin: auto;
     text-align: center;
+
 }
 
 h2 {
@@ -28,7 +29,6 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 img {
@@ -45,5 +45,3 @@ img {
     50%  { transform: translate(0, 15px); } 
     100%   { transform: translate(0, -0px); }    
 }
-
-@keyframes

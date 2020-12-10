@@ -11,7 +11,7 @@ public class LoginService {
     private User userOnLogin;
 
 
-    //set usergit
+    //set user service
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;

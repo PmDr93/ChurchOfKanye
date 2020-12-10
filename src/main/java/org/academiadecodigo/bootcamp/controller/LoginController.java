@@ -6,11 +6,11 @@ import org.academiadecodigo.bootcamp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
 
 @Controller
+@SessionAttributes("user")
 public class LoginController {
 
     private LoginService loginService;
@@ -27,15 +27,31 @@ public class LoginController {
         this.userService = userService;
     }
 
+
     //get sign up page
     @RequestMapping(method = RequestMethod.GET, path = "/signup")
-    public String getSignUpPage(Model model) {
+    public String signUpButton(Model model) {
 
         model.addAttribute("user", new User());
 
         return "sign-up";
     }
 
+    //cancel button from sign-up
+    @RequestMapping(method = RequestMethod.POST, path = "/signup", params = "action=cancel")
+    public String cancelSignUpButton() {
+        return "redirect:/";
+    }
+
+    //cancel button from sign-up
+    @RequestMapping(method = RequestMethod.POST, path = "/signup", params = "action=save")
+    public String signUpButtonRedirect(@ModelAttribute("user") User user) {
+
+        User user1 = userService.getUser(user.getId());
+
+
+        return "redirect:/main" + user1.getId();
+    }
 
     //get page login
     @RequestMapping(method = RequestMethod.GET, path = "/login")
@@ -43,17 +59,41 @@ public class LoginController {
         return "login";
     }
 
+    //cancel button from login
+    @RequestMapping(method = RequestMethod.POST, path = "/login", params = "action=cancel")
+    public String cancelSignUpButtonFromLogin() {
+        return "redirect:/";
+    }
+
 
     //authenticate user and get page of user
-    @RequestMapping(method = RequestMethod.POST, path = "/login/{username}")
-    public String authenticateUser(@ModelAttribute String username, @ModelAttribute String pass, @ModelAttribute Integer id, Model model) {
+    @RequestMapping(method = RequestMethod.POST, path = "/login", params = "action=getUserPage")
+    public String authenticateUser(Model model, @ModelAttribute String username, @ModelAttribute String pass) {
 
         if (loginService.authenticateUser(username, pass)) {
-            model.addAttribute("user", userService.getUser(id));
-            return "user/userpage";
+            model.addAttribute("user", loginService.getUserOnLogin());
+            return "redirect:/main" + loginService.getUserOnLogin().getId();
         }
 
-        return "redirect:/main/login";
+        return "login";
+    }
+
+
+    //get user page
+    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
+    public String getUserPage(@PathVariable Integer id, Model model) {
+
+        model.addAttribute("user", userService.getUser(id));
+
+        return "login";
+    }
+
+
+
+    //see main
+    @RequestMapping(method = RequestMethod.GET, path = "/main")
+    public String seeUserPage() {
+        return "main";
     }
 
 
