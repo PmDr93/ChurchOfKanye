@@ -1,6 +1,7 @@
 package org.academiadecodigo.bootcamp.controller;
 
-import org.academiadecodigo.bootcamp.model.User;
+import org.academiadecodigo.bootcamp.converters.UserToDto;
+import org.academiadecodigo.bootcamp.persistence.model.*;
 import org.academiadecodigo.bootcamp.services.LoginService;
 import org.academiadecodigo.bootcamp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,13 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-
 @Controller
 @SessionAttributes("user")
 public class LoginController {
 
     private LoginService loginService;
     private UserService userService;
+    private UserToDto userToDto;
 
     @Autowired
     //Set Login Service
@@ -88,13 +89,12 @@ public class LoginController {
         return "login";
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/list")
+    public String userList(Model model) {
 
+        model.addAttribute("users", userService.getUsersList());
 
-    //see main
-    @RequestMapping(method = RequestMethod.GET, path = "/main")
-    public String seeUserPage() {
-        return "main";
+        return "list";
+
     }
-
-
 }

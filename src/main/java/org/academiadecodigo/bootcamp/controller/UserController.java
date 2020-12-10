@@ -1,8 +1,7 @@
 package org.academiadecodigo.bootcamp.controller;
 
-import org.academiadecodigo.bootcamp.model.User;
+import org.academiadecodigo.bootcamp.persistence.model.User;
 import org.academiadecodigo.bootcamp.services.UserService;
-import org.academiadecodigo.bootcamp.services.UserServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +16,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/user")
 public class UserController {
 
-    private UserServiceInterface userService;
+    private UserService userService;
+    private ActionController actionController;
 
 
     //set user
@@ -25,6 +25,13 @@ public class UserController {
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
+
+    @Autowired
+    public void setActionController(ActionController actionController) {
+        this.actionController = actionController;
+    }
+
+
 
 
     //delete the account of user
@@ -57,4 +64,19 @@ public class UserController {
 
         return "redirect:/userpage";
     }
+
+    //see the actions list the user has to do
+    @RequestMapping(method = RequestMethod.GET, path = "/list")
+    public String actionsList(Model model, @PathVariable Integer id) {
+
+        model.addAttribute("action5");
+        model.addAttribute("action10");
+
+        return "actionlist";
+    }
+
+    public void getAction(Integer id) {
+        userService.getActionList(id).add(actionController.getAction());
+    }
+
 }

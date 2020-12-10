@@ -3,14 +3,14 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Thymeleaf View Resolver, implements Spring ViewResolver interface -->
+
     <bean id="viewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine"/>
         <property name="characterEncoding" value="UTF-8"/>
         <property name="contentType" value="text/html; charset=UTF-8"/>
     </bean>
 
-    <!-- Thymeleaf Template Engine (Spring4-specific version) -->
+
     <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
         <property name="templateResolvers">
             <set>
@@ -19,7 +19,7 @@
         </property>
     </bean>
 
-    <!-- Thymeleaf template resolver -->
+
     <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
         <property name="prefix" value="/WEB-INF/templates/"/>
         <property name="suffix" value=".html"/>

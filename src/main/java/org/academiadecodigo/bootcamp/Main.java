@@ -34,5 +34,11 @@ public class Main {
 
         System.out.println("***********************************");
 
+        bootStrap.getActionTest();
+
+        System.out.println("******************************************");
+
+        bootStrap.getActionTest(1);
+
     }
 }

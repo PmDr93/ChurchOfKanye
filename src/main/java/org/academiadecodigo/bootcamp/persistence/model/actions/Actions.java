@@ -1,12 +1,22 @@
-package org.academiadecodigo.bootcamp.model.actions;
+package org.academiadecodigo.bootcamp.persistence.model.actions;
 
-public abstract class Actions {
+import org.academiadecodigo.bootcamp.persistence.model.*;
 
-    private int id;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "actions")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "action_type")
+public abstract class Actions extends AbstractModel {
+
     private int value;
     private String name;
     private String description;
     private boolean isComplete = false;
+
+    @ManyToOne
+    private User user;
 
 
     public String getName() {
@@ -14,12 +24,6 @@ public abstract class Actions {
     }
     public void setName(String name) {
         this.name = name;
-    }
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
     }
     public int getValue() {
         return value;
@@ -33,18 +37,25 @@ public abstract class Actions {
     public void setDescription(String description) {
         this.description = description;
     }
-    public Boolean getComplete() {
+    public boolean isComplete() {
         return isComplete;
     }
-    public void setComplete(Boolean complete) {
+
+    public void setComplete(boolean complete) {
         isComplete = complete;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     @Override
     public String toString() {
         return "Actions{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", isComplete=" + isComplete +
