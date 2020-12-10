@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="test" />
+        <module name="hackaton-anderdogs" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="test" target="10" />
+    </bytecodeTargetLevel>
   </component>
 </project>

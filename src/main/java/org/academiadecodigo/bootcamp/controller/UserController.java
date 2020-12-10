@@ -20,7 +20,7 @@ public class UserController {
     private UserServiceInterface userService;
 
 
-    //set user service
+    //set user
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
@@ -38,7 +38,7 @@ public class UserController {
 
 
 
-    @RequestMapping(method = RequestMethod.GET, path = "/edituser/{id}")
+    @RequestMapping(method = RequestMethod.GET, path = "/edituser1/{id}")
     public String updateInfoUserPage(@PathVariable Integer id, Model model) {
 
         model.addAttribute("user", userService.getUser(id));
@@ -46,7 +46,7 @@ public class UserController {
         return "edituser";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/edituser/{id}/edit")
+    @RequestMapping(method = RequestMethod.GET, path = "/edituser/{id}")
     public String updateInfoUser(@ModelAttribute User user, @PathVariable Integer id, RedirectAttributes redirectAttributes, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {

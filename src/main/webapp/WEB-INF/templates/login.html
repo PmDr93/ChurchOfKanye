@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <thymeleaf th:replace="header :: header"/>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        
+    <img src="resources/kanye-login.png" alt="Login Font">
+
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <form class ="form-horizontal" th:object="${user}" th:action="@{/user}" method="post">
+
+                <input type="hidden" th:field="*{id}"/>
+
+                <div class="form-group" id="test">
+                    <label class="col-sm-2 control-label">Username:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" th:field="*{username}"/>
+                        <!--<span class = "text-warning" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name field error messages
+                        </span>-->
+                    </div>
+                </div>
+
+                <div class="form-group" id="test">
+                    <label class="col-sm-2 control-label">Password:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" th:field="*{password}"/>
+                        <!-- <span class = "text-warning" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name field error messages
+                        </span> -->
+                    </div>
+                </div>
+
+                <div class="row" id="test">
+                    <div class="col-sm-3">
+                        <button type="submit" class="btn btn-warning" name="action" value="save">Enter</button>
+                        <button type="cancel" class="btn btn-danger" name="action" value="cancel">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/")
 public class LoginController {
 
     private LoginService loginService;
     private UserService userService;
 
-    //Set Login Service
     @Autowired
+    //Set Login Service
     public void setLoginService(LoginService loginService) {
         this.loginService = loginService;
     }
@@ -34,14 +33,14 @@ public class LoginController {
 
         model.addAttribute("user", new User());
 
-        return "main/signup";
+        return "sign-up";
     }
 
 
     //get page login
     @RequestMapping(method = RequestMethod.GET, path = "/login")
     public String getLoginPage() {
-        return "main/login";
+        return "login";
     }
 
 
