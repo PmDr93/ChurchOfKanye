@@ -1,12 +1,14 @@
 package org.academiadecodigo.bootcamp.services;
 
 import org.academiadecodigo.bootcamp.model.actions.Actions;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Service
 public class ActionService {
 
     private Map<Integer, Actions> actionMap = new HashMap<>();

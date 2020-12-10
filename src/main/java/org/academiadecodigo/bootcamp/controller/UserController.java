@@ -3,6 +3,7 @@ package org.academiadecodigo.bootcamp.controller;
 import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.services.UserService;
 import org.academiadecodigo.bootcamp.services.UserServiceInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,7 +20,8 @@ public class UserController {
     private UserServiceInterface userService;
 
 
-    //set user service
+    //set user
+    @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
@@ -36,7 +38,7 @@ public class UserController {
 
 
 
-    @RequestMapping(method = RequestMethod.GET, path = "/edituser/{id}")
+    @RequestMapping(method = RequestMethod.GET, path = "/edituser1/{id}")
     public String updateInfoUserPage(@PathVariable Integer id, Model model) {
 
         model.addAttribute("user", userService.getUser(id));
