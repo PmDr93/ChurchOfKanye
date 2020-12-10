@@ -5,6 +5,16 @@
            xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
+
+
+        <tx:annotation-driven transaction-manager="transactionManager"/>
+
+        <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+            <property name="entityManagerFactory" ref="emFactory" />
+        </bean>
+
+
+
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
     <bean class="java.net.URI" id="dbUrl">
@@ -33,34 +43,5 @@
         </property>
     </bean>
 
-        <tx:annotation-driven transaction-manager="transactionManager"/>
-
-        <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-            <property name="entityManagerFactory" ref="emFactory" />
-        </bean>
-
-
-        <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
-        <bean class="java.net.URI" id="dbUrl">
-            <constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
-        </bean>
-
-        <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-            <property name="driverClass" value="org.postgresql.Driver"/>
-            <property name="jdbcUrl" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }">
-
-            </property>
-            <property name="user" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
-            <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
-
-            <property name="jpaProperties">
-                <map>
-                    <entry key="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
-                    <!-- Run as create once to initialize the schema -->
-                    <entry key="hibernate.hbm2ddl.auto" value="create"/>
-                </map>
-            </property>
-
-        </bean>
 
 </beans>
