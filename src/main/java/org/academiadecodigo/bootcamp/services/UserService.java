@@ -1,8 +1,9 @@
 package org.academiadecodigo.bootcamp.services;
 
-import org.academiadecodigo.bootcamp.model.User;
-import org.academiadecodigo.bootcamp.model.actions.Actions;
+
+import org.academiadecodigo.bootcamp.persistence.model.actions.Actions;
 import org.springframework.stereotype.Service;
+import org.academiadecodigo.bootcamp.persistence.model.*;
 
 import java.util.ArrayList;
 import java.util.List;

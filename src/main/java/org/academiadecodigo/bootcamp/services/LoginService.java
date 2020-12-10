@@ -1,6 +1,6 @@
 package org.academiadecodigo.bootcamp.services;
 
-import org.academiadecodigo.bootcamp.model.User;
+import org.academiadecodigo.bootcamp.persistence.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -21,6 +21,12 @@
     </servlet-mapping>
 
 
+    <context-param>
+        <param-name>spring.profiles.active</param-name>
+        <param-value>prod</param-value>
+    </context-param>
+
+
     <!--
         This is useful because current browsers typically do not
         set a character encoding even if specified in the HTML page or form

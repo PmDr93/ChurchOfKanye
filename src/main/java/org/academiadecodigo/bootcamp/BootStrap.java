@@ -4,17 +4,14 @@ import org.academiadecodigo.bootcamp.controller.ActionController;
 import org.academiadecodigo.bootcamp.controller.LoginController;
 import org.academiadecodigo.bootcamp.controller.MainController;
 import org.academiadecodigo.bootcamp.controller.UserController;
-import org.academiadecodigo.bootcamp.model.User;
-import org.academiadecodigo.bootcamp.model.actions.Actions;
-import org.academiadecodigo.bootcamp.model.actions.LongAction;
-import org.academiadecodigo.bootcamp.model.actions.ShortAction;
+import org.academiadecodigo.bootcamp.persistence.model.User;
+import org.academiadecodigo.bootcamp.persistence.model.actions.Actions;
+import org.academiadecodigo.bootcamp.persistence.model.actions.LongAction;
+import org.academiadecodigo.bootcamp.persistence.model.actions.ShortAction;
 import org.academiadecodigo.bootcamp.services.ActionService;
 import org.academiadecodigo.bootcamp.services.UserService;
 
-import java.util.LinkedList;
-import java.util.List;
 import org.academiadecodigo.bootcamp.services.LoginService;
-import org.academiadecodigo.bootcamp.services.UserService;
 
 public class BootStrap {
 
@@ -35,7 +32,7 @@ public class BootStrap {
         user.setLastName("Rafael");
         user.setUsername("pedro");
         user.setPassword("pedrito");
-        user.setMeter(50);
+        user.setMeterPercent(50);
         user.setPoints(20);
 
         addUser();

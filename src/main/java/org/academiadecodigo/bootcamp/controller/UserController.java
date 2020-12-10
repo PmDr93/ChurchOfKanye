@@ -1,9 +1,7 @@
 package org.academiadecodigo.bootcamp.controller;
 
-import org.academiadecodigo.bootcamp.model.User;
-import org.academiadecodigo.bootcamp.model.actions.Actions;
+import org.academiadecodigo.bootcamp.persistence.model.User;
 import org.academiadecodigo.bootcamp.services.UserService;
-import org.academiadecodigo.bootcamp.services.UserServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
