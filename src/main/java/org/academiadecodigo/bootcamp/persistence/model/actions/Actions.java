@@ -10,7 +10,7 @@ import javax.persistence.*;
 @DiscriminatorColumn(name = "action_type")
 public abstract class Actions extends AbstractModel {
 
-    private int value;
+    private int actionValue;
     private String name;
     private String description;
     private boolean isComplete = false;
@@ -26,10 +26,10 @@ public abstract class Actions extends AbstractModel {
         this.name = name;
     }
     public int getValue() {
-        return value;
+        return actionValue;
     }
     public void setValue(int value) {
-        this.value = value;
+        this.actionValue = value;
     }
     public String getDescription() {
         return description;
