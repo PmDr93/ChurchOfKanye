@@ -76,7 +76,8 @@ public class MainController {
         user3.setUsername("bruno");
         user3.setPassword("academia");
         user3.setEmail("bruno@gmail.com");
-        user3.setMeterPercent(60000);
+        user3.setMeterPercent(50);
+        user3.setPoints(60000);
 
         user4.setId(4);
         user4.setFirstName("Raquel");
