@@ -43,7 +43,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, path = "/edituser1/{id}")
+    @RequestMapping(method = RequestMethod.GET, path = "/edituser/{id}")
     public String updateInfoUserPage(@PathVariable Integer id, Model model) {
 
         model.addAttribute("user", userService.getUser(id));
@@ -51,7 +51,7 @@ public class UserController {
         return "edituser";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/edituser/{id}")
+    @RequestMapping(method = RequestMethod.POST, path = "/edituser/{id}")
     public String updateInfoUser(@ModelAttribute User user, @PathVariable Integer id, RedirectAttributes redirectAttributes, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
@@ -74,7 +74,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, path = "/upload/image")
+    @RequestMapping(method = RequestMethod.GET, path = "/upload/image")
     public String uploadImage(@ModelAttribute User user, Model model) {
 
         User user1 = userService.getUser(user.getId() - 1);
