@@ -133,17 +133,16 @@ public class LoginController {
 
         User user = new User();
 
-//        user.setId(1);
-//        user.setFirstName("Pedro");
-//        user.setLastName("Rafael");
-//        user.setUsername("pedro");
-//        user.setPassword("academia");
-//        user.setEmail("pedro@gmail.com");
+        user.setId(1);
+        user.setFirstName("Pedro");
+        user.setLastName("Rafael");
+        user.setUsername("pedro");
+        user.setPassword("academia");
+        user.setEmail("pedro@gmail.com");
 
         //user.setMeterPercent(30);
 
-
-        model.addAttribute("user", userService.getUser(1));
+        model.addAttribute("user", user);
 
         return "main";
     }
