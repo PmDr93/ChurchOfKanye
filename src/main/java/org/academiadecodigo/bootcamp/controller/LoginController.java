@@ -61,14 +61,9 @@ public class LoginController {
         return "sign-up";
     }
 
-    //cancel button from sign-up
-    @RequestMapping(method = RequestMethod.POST, path = "/signup", params = "action=cancel")
-    public String cancelSignUpButton() {
-        return "redirect:/";
-    }
 
     //add new user
-    @RequestMapping(method = RequestMethod.POST, path = "/signup", params = "action=save")
+    @RequestMapping(method = RequestMethod.POST, path = "/signup")
     public String signUpButtonRedirect(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
@@ -92,15 +87,9 @@ public class LoginController {
         return "login";
     }
 
-    //cancel button from login
-    @RequestMapping(method = RequestMethod.POST, path = "/login", params = "action=cancel")
-    public String cancelSignUpButtonFromLogin() {
-        return "redirect:/index";
-    }
-
 
     //authenticate user and get page of user
-    @RequestMapping(method = RequestMethod.POST, path = "/user", params = "action=getUserPage")
+    @RequestMapping(method = RequestMethod.POST, path = "/user")
     public String authenticateUser(Model model, @ModelAttribute String username, @ModelAttribute String pass) {
 
         if (loginService.authenticateUser(username, pass)) {

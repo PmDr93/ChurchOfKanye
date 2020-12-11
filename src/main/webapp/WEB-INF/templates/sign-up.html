@@ -14,7 +14,7 @@
 
     <div class="row justify-content-center">
         <div class="col-sm-8">
-            <form class="form-horizontal" th:object="${user}" th:action="@{/user}" method="post">
+            <form class="form-horizontal" th:object="${user}" th:action="@{/signup}" method="post">
 
                 <input type="hidden" th:field="*{id}"/>
 
@@ -65,8 +65,8 @@
 
                 <div class="row" id="test">
                     <div class="col-sm-3">
-                        <button type="submit" class="btn btn-warning" name="action" value="save">Submit</button>
-                        <button type="cancel" class="btn btn-danger" name="action" value="cancel">Cancel</button>
+                        <button type="submit" class="btn btn-warning">Submit</button>
+                        <button type="cancel" class="btn btn-danger" th:href="@{/}">Cancel</button>
                     </div>
                 </div>
                 
