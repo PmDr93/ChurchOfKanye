@@ -19,7 +19,7 @@ public class DtoToUser {
     
     public User convert(UserDto userDto) {
 
-        User user = (userDto.getId() != null ? userService.getUser(userDto.getId()) : new User());
+        User user = (userDto.getId() != null ? userService.getUser(userDto.getId() - 1) : new User());
 
         user.setId(userDto.getId());
         user.setFirstName(userDto.getFirstName());
