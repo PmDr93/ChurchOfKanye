@@ -89,7 +89,7 @@ public class LoginController {
     //cancel button from login
     @RequestMapping(method = RequestMethod.POST, path = "/login", params = "action=cancel")
     public String cancelSignUpButtonFromLogin() {
-        return "redirect:/";
+        return "redirect:/index";
     }
 
 
@@ -116,7 +116,7 @@ public class LoginController {
 
         model.addAttribute("user", userDto);
 
-        return "main" + userDto.getId();
+        return "main";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/list")
