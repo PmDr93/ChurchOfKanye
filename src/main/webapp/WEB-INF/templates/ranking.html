@@ -24,13 +24,13 @@
             <tr th:each="user : ${users}">
                 <td th:text="${user.username}"></td>
                 <td th:text="${user.points}"></td>
-                <td th:if="${user.points} &ge; 50000">Archangel of Kanye</td>
+                <td th:switch="60000">Archangel of Kanye</td>
 
-                <td th:if="${user.points} &ge; 15000">Angel of Kanye</td>
+                <td th:switch="15000">Angel of Kanye</td>
 
-                <td th:if="${user.points} &gt; 8000">Mere Human</td>
+                <td th:switch="9000">Mere Human</td>
 
-                <td th:if="${user.points} &le; 8000">Away from Kanye's sight</td>
+                <td th:switch="2000">Away from Kanye's sight</td>
             </tr>
         </table>        
     </div>
