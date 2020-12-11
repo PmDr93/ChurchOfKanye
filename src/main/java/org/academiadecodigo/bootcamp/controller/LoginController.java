@@ -56,7 +56,7 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.GET, path = "/signup")
     public String signUpButton(Model model) {
 
-        model.addAttribute("user", userToDto.convert(new User()));
+        model.addAttribute("user", new UserDto());
 
         return "sign-up";
     }
@@ -90,9 +90,9 @@ public class LoginController {
 
     //authenticate user and get page of user
     @RequestMapping(method = RequestMethod.POST, path = "/login")
-    public String authenticateUser(Model model, @ModelAttribute String username, @ModelAttribute String pass) {
+    public String authenticateUser(Model model, @ModelAttribute UserDto user) {
 
-        if (loginService.authenticateUser(username, pass)) {
+        if (loginService.authenticateUser(user.getUsername(), user.getPassword())) {
 
             UserDto userDto = userToDto.convert(loginService.getUserOnLogin());
             model.addAttribute("user", userDto);
