@@ -59,7 +59,7 @@ public class MainController {
         user.setPassword("academia");
         user.setEmail("pedro@gmail.com");
         user.setMeterPercent(80);
-        user.setPoints(9000);
+        user.setPoints(60000);
 
         user2.setId(2);
         user2.setFirstName("André");
@@ -68,7 +68,7 @@ public class MainController {
         user2.setPassword("academia");
         user2.setEmail("andre@gmail.com");
         user2.setMeterPercent(20);
-        user2.setPoints(2000);
+        user2.setPoints(20000);
 
         user3.setId(3);
         user3.setFirstName("Bruno");
@@ -77,7 +77,7 @@ public class MainController {
         user3.setPassword("academia");
         user3.setEmail("bruno@gmail.com");
         user3.setMeterPercent(50);
-        user3.setPoints(60000);
+        user3.setPoints(9000);
 
         user4.setId(4);
         user4.setFirstName("Raquel");
@@ -86,7 +86,7 @@ public class MainController {
         user4.setPassword("academia");
         user4.setEmail("raquel@gmail.com");
         user4.setMeterPercent(60);
-        user4.setPoints(20000);
+        user4.setPoints(2000);
 
         userService.add(user);
         userService.add(user2);
