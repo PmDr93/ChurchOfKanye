@@ -25,7 +25,7 @@ public class ActionController {
         double num  = Math.ceil(Math.random()*5);
         int  num2 = (int)num;
 
-        return actionService.getAction(num2);
+        return null;
     }
 
 }
