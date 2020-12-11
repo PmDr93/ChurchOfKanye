@@ -21,17 +21,21 @@
             background-image: url('resources/roadtohell.jpg');
             background-size: contain;
            }
+
+        h2 {
+            color: red;
+        }
     </style>
 
 
 
     <ul>
-        <li><a href="#user">User Settings</a></li>
-        <li><a href="#list">Road to Heaven</a></li> 
+        <li><a th:href="@{/edit}">User Settings</a></li>
+        <li><a th:href="@{/challenges}">Road to Heaven</a></li>
         <li><a class="button" href="#popup1">Current Challenge</a></li>
-        <li><a href="submit.html">Submit Challenge</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li style="float:right"><a class="active" href="index.html">Log-out</a></li>
+        <li><a th:href="@{/submit}">Submit Challenge</a></li>
+        <li><a th:href="@{/aboutus}">About Us</a></li>
+        <li style="float:right"><a class="active" th:href="@{/}">Log-out</a></li>
     </ul>
 
     <div class="container">
@@ -89,8 +93,8 @@
         <div class="popup">
             <h2>Ready for the daily Kanye challenge?</h2>
             <a class="close" href="#">&times;</a>
-            <div class="content">
-                Help your parents in the kitchen! Your parents work hard to buy you food and make you meals - Kanye says, be more grateful! Peace out.
+            <div th:text="${action}" class="content">
+
             </div>
         </div>
     </div>

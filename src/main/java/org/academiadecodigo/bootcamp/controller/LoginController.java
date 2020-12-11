@@ -4,6 +4,7 @@ import org.academiadecodigo.bootcamp.DTO.UserDto;
 import org.academiadecodigo.bootcamp.converters.DtoToUser;
 import org.academiadecodigo.bootcamp.converters.UserToDto;
 import org.academiadecodigo.bootcamp.persistence.model.*;
+import org.academiadecodigo.bootcamp.services.ActionService;
 import org.academiadecodigo.bootcamp.services.LoginService;
 import org.academiadecodigo.bootcamp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class LoginController {
 
     private LoginService loginService;
     private UserService userService;
+    private ActionService actionService;
     private UserToDto userToDto;
     private DtoToUser dtoToUser;
 
@@ -45,6 +47,10 @@ public class LoginController {
         this.userToDto = userToDto;
     }
 
+    @Autowired
+    public void setActionService(ActionService actionService) {
+        this.actionService = actionService;
+    }
 
     //get sign up page
     @RequestMapping(method = RequestMethod.GET, path = "/signup")
@@ -133,6 +139,7 @@ public class LoginController {
 
 
         model.addAttribute("user", userService.getUser(1));
+        model.addAttribute("actions", actionService.getAction(1));
 
         return "main";
     }
