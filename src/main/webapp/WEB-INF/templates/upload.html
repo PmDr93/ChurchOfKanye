@@ -34,6 +34,7 @@
              justify-content: center;
              min-height: 50vh;
              }
+
              label {
   background-color: indigo;
   color: white;
@@ -60,12 +61,7 @@
 <div class="container">
 
 
-            <input type="file" id="actual-btn" hidden/>
-
-            <a role="button" class="btn btn-primary" th:href="@{/upload/image}">Submit form</a>
-
-        </div>
-    </div>
+    <a class="label" th:href="@{/upload/image}">Submit</a>
 
 </div>
 
