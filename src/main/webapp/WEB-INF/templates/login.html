@@ -20,6 +20,8 @@
             <form class ="form-horizontal" th:object="${user}" th:action="@{/login}" method="post">
 
                 <input type="hidden" th:field="*{id}"/>
+                <input type="hidden" value="0" th:field="*{user.meterPercent}"/>
+
 
                 <div class="form-group" id="test">
                     <label class="col-sm-2 control-label">Username:</label>
