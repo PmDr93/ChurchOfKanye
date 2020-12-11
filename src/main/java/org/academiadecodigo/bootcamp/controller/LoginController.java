@@ -99,9 +99,9 @@ public class LoginController {
 
         if (loginService.authenticateUser(user.getUsername(), user.getPassword())) {
 
-            UserDto userDto = userToDto.convert(loginService.getUserOnLogin());
-            model.addAttribute("user", userDto);
-            return "redirect:/main/" + userDto.getId();
+
+            model.addAttribute("user", loginService.getUserOnLogin());
+            return "redirect:/main/" + loginService.getUserOnLogin().getId();
         }
 
         return "redirect:/login";
@@ -113,7 +113,7 @@ public class LoginController {
     public String getUserPage(@PathVariable Integer id, Model model) {
 
 
-        model.addAttribute("user", userService.getUser(2));
+        model.addAttribute("user", userService.getUser(id));
         model.addAttribute("actions", actionService.getAction(2));
 
         return "main";
