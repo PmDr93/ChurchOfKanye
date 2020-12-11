@@ -10,11 +10,11 @@
 </head>
 <body>
     <style th:if="${user.meterPercent} &gt; 50">
-        background-image: url('../resources/roadtoheaven.jpg');
+        background-image: url('resources/roadtoheaven.jpg');
     </style>
 
     <style th:unless="${user.meterPercent} &gt; 50">
-        background-image: url('../resources/roadtohell.jpg');
+        background-image: url('resources/roadtohell.jpg');
     </style>
 
 
