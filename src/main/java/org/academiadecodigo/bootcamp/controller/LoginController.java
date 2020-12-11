@@ -87,7 +87,7 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.GET, path = "/login")
     public String getLoginPage(Model model) {
 
-        model.addAttribute(new UserDto());
+        model.addAttribute("user", new UserDto());
 
         return "login";
     }
