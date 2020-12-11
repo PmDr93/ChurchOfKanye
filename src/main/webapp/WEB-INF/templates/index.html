@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -11,8 +11,7 @@
 </head>
 
 <body>
-    <header>
-            
+
         <img src="resources/kanye-welcome.png" alt="The Church of Kanye Welcome Screen">
         <br>
         <h3>Are you already a believer?</h3>
@@ -20,14 +19,15 @@
 
         <div class="buttons">
             <div class="login">
-                <a href="main.html">Log-in</a>
+                <a th:href="@{/login}">Log-in</a>
             </div>
             <div class="signup">
-                <a href="sign-up.html">Sign up</a>
+                <a th:href="@{/signup}">Sign up</a>
             </div>
             <div class="aboutus">
-                <a href="aboutus.html">About us</a>
+                <a th:href="@{⁄aboutus}">About us</a>
             </div> 
         </div>
+
 </body>
 </html>

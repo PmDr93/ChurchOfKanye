@@ -25,9 +25,11 @@ h3 {
 
 .buttons {
     display: flex;
+    width: 200px;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
+
 }
 
 .login {
