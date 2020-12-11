@@ -14,37 +14,32 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class UserService  {
+public class UserService implements UserServiceInterface {
 
     private Map<String, User> usersList = new HashMap<>();
 
 
     public List<User> getUsersList() {
-        return new ArrayList<>();
+
+
+        return null;
     }
 
-
-    public User getUserById() {
-
-        return new User();
-
+    @Override
+    public User getUser(Integer id) {
+        return getUser(id);
     }
 
-
-    public User getUserByUsername(String username) {
-
-        return new User();
-    }
-
-
+    @Override
     public void add(User user) {
 
         usersList.put(user.getUsername(), user);
     }
 
 
-    public void delete(String username) {
-        usersList.remove(username);
+    @Override
+    public void delete(Integer id) {
+        usersList.remove(id);
     }
 
 

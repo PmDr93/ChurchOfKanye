@@ -36,9 +36,9 @@ public class UserController {
 
     //delete the account of user
     @RequestMapping(method = RequestMethod.GET, path = "/delete/{id}")
-    public String deleteUser(@PathVariable String username) {
+    public String deleteUser(@PathVariable Integer id) {
 
-        userService.delete(username);
+        userService.delete(id);
 
         return "redirect:/index";
     }
