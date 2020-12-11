@@ -1,10 +1,5 @@
 package org.academiadecodigo.bootcamp.services;
 
-
-import org.academiadecodigo.bootcamp.persistence.dao.jpa.ActionDaoJPA;
-import org.academiadecodigo.bootcamp.persistence.dao.jpa.UserDaoJPA;
-import org.academiadecodigo.bootcamp.persistence.model.actions.Actions;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.academiadecodigo.bootcamp.persistence.model.*;
 
