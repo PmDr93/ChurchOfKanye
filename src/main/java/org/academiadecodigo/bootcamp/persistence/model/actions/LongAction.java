@@ -1,8 +1,5 @@
 package org.academiadecodigo.bootcamp.persistence.model.actions;
 
-import javax.persistence.Entity;
-
-@Entity
 public class LongAction extends Actions {
 
     private final int value = 10;

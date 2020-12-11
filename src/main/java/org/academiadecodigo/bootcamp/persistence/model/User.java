@@ -2,12 +2,10 @@ package org.academiadecodigo.bootcamp.persistence.model;
 
 import org.academiadecodigo.bootcamp.persistence.model.actions.Actions;
 
-import javax.persistence.*;
 import java.util.LinkedList;
 import java.util.List;
 
-@Entity
-@Table(name = "Users")
+
 public class User extends AbstractModel {
 
     private String firstName;
@@ -18,15 +16,7 @@ public class User extends AbstractModel {
     private int meterPercent;
     private int points;
 
-    @OneToMany(
-            cascade = {CascadeType.ALL},
-            orphanRemoval = true,
-            mappedBy = "user",
-            fetch = FetchType.EAGER
-    )
     private List<Actions> actionsList = new LinkedList<>();
-
-
 
     //getters and setters
     public String getFirstName() {
