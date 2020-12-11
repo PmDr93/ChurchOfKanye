@@ -49,6 +49,7 @@ public class MainController {
         user.setUsername("pedro");
         user.setPassword("academia");
         user.setEmail("pedro@gmail.com");
+        user.setMeterPercent(80);
 
         user2.setId(2);
         user2.setFirstName("André");
