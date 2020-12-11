@@ -127,4 +127,10 @@ public class LoginController {
         return "list";
 
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/main")
+    public String getMainPage(Model model) {
+        model.addAttribute(userService.getUser(1));
+        return "main";
+    }
 }
