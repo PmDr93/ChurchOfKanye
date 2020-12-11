@@ -112,9 +112,8 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.GET, path = "/main/{id}")
     public String getUserPage(@PathVariable Integer id, Model model) {
 
-        UserDto userDto = userToDto.convert(userService.getUser(id));
 
-        model.addAttribute("user", userDto);
+        model.addAttribute("user", userService.getUser(id));
 
         return "main";
     }
