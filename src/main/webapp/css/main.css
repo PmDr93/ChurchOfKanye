@@ -1,42 +1,41 @@
 body {
     font-family: 'Abel', sans-serif;
-    font-weight: bold;
+    font-weight: bolder;
     line-height: 1.5;
     margin: auto;
     text-align: center;
 }
-
+    
 li {
     border-right: 1px solid #bbb;
-    float: left;  }
-
+    float: left;  } 
+    
 li:last-child {
-    border-right: none;
-}
+    border-right: none;  
+}  
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    margin: 0;    
+    padding: 0;    
+    overflow: hidden;    
     background-color: #333;
-}
-
-li a {
+}  
+    
+li a {    
     display: block;
     color: white;
-    text-align: center;
-    padding: 14px 16px;
+    text-align: center; 
+    padding: 14px 16px;    
     text-decoration: none;
 }
 
-li a:hover {
+li a:hover { 
     background-color: darkcyan;
 }
 
-
 .progress-title{
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 700;
     color: #333;
     text-transform: uppercase;
@@ -51,7 +50,6 @@ li a:hover {
     position: relative;
 }
 
-
 .progress .progress-bar{
     box-shadow: none;
     border: none;
@@ -65,7 +63,6 @@ li a:hover {
     height: 35px;
     line-height: 27px;
     border-radius: 20px;
-
     font-size: 17px;
     font-weight: 600;
     position: absolute;
@@ -79,7 +76,6 @@ li a:hover {
     height: 35px;
     line-height: 27px;
     border-radius: 20px;
-
     font-size: 17px;
     font-weight: 600;
     position: absolute;
@@ -88,7 +84,6 @@ li a:hover {
     z-index: 2;
 
 }
-
 
 .progress.orange .progress-value{
 
@@ -102,8 +97,8 @@ li a:hover {
     0%{ width: 0; }
 }
 
-.meter {
-	height: 10px;
+.meter { 
+	height: 10px;  /* Can be anything */
 	position: relative;
 	background: #555;
 	-moz-border-radius: 25px;
@@ -119,4 +114,68 @@ img {
     top: -35px;
 }
 
+h2 {
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
 
+.overlay {
+  margin: 8%;
+  top: 0;
+  bottom: 20;
+  left: 0;
+  right: 0;
+  background: none;
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: beige;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: black;
+  padding-bottom: 10px;
+  font-family: 'Abel', sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: darkcyan;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
