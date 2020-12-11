@@ -64,12 +64,27 @@ public class UserController {
         return "redirect:/userpage";
     }
 
-    //see the actions list the user has to do
-    @RequestMapping(method = RequestMethod.GET, path = "/upload")
-    public String uploadImage() {
+    //see the
+    @RequestMapping(method = RequestMethod.GET, path = "/upload/{id}")
+    public String showUploadImage(@PathVariable Integer id, Model model) {
+
+        model.addAttribute("user", userService.getUser(id));
 
         return "upload";
     }
+
+
+    @RequestMapping(method = RequestMethod.POST, path = "/upload/image")
+    public String uploadImage(@ModelAttribute User user, Model model) {
+
+        User user1 = userService.getUser(user.getId());
+        user1.setMeterPercent(user1.getMeterPercent() + 10);
+
+        model.addAttribute(user1);
+
+        return "redirect:/main/" + user1.getId();
+    }
+
 
 
 
