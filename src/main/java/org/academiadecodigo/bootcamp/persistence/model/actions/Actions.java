@@ -2,12 +2,7 @@ package org.academiadecodigo.bootcamp.persistence.model.actions;
 
 import org.academiadecodigo.bootcamp.persistence.model.*;
 
-import javax.persistence.*;
 
-@Entity
-@Table(name = "actions")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "action_type")
 public abstract class Actions extends AbstractModel {
 
     private int actionValue;
@@ -15,7 +10,6 @@ public abstract class Actions extends AbstractModel {
     private String description;
     private boolean isComplete = false;
 
-    @ManyToOne
     private User user;
 
 
