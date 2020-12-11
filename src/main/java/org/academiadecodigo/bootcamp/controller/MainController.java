@@ -32,10 +32,7 @@ public class MainController {
     @RequestMapping(method = RequestMethod.GET, path = "/")
     public String homePage(Model model) {
 
-
         bootStrap();
-
-        model.addAttribute("userlist", userService.getUsersList().size());
 
         return "index";
     }

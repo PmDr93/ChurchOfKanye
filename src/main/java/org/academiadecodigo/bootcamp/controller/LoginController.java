@@ -131,18 +131,19 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.GET, path = "/main")
     public String getMainPage(Model model) {
 
-        User user = new User();
+//        User user = new User();
+//
+//        user.setId(1);
+//        user.setFirstName("Pedro");
+//        user.setLastName("Rafael");
+//        user.setUsername("pedro");
+//        user.setPassword("academia");
+//        user.setEmail("pedro@gmail.com");
+//
+//        user.setMeterPercent(80);
 
-        user.setId(1);
-        user.setFirstName("Pedro");
-        user.setLastName("Rafael");
-        user.setUsername("pedro");
-        user.setPassword("academia");
-        user.setEmail("pedro@gmail.com");
-
-        user.setMeterPercent(80);
-
-        model.addAttribute("user", user);
+        model.addAttribute("user", userService.getUser(1));
+        model.addAttribute("userlist", userService.getUsersList().size());
 
         return "main";
     }
