@@ -15,31 +15,22 @@
         <img src="resources/ranking.png" alt="Ranking font">
     </header>
     <div class="rankingtable">
-        <table class="pure-table" th:each="user : ${users}">
+        <table class="pure-table">
             <tr >
                 <th>Username</th>
                 <th>Total Points</th>
                 <th>Ranking</th>
             </tr>
-            <tr>
+            <tr th:each="user : ${users}">
                 <td th:text="${user.username}"></td>
                 <td th:text="${user.points}"></td>
-                <td>Archangel of Kanye</td>
-            </tr>
-            <tr>
-                <td th:text="${user.username}"></td>
-                <td th:text="${user.points}"></td>
-                <td>Angel of Kanye</td>
-            </tr>
-            <tr>
-                <td th:text="${user.username}"></td>
-                <td th:text="${user.points}"></td>
-                <td>Mere Human</td>
-            </tr>
-            <tr>
-                <td th:text="${user.username}"></td>
-                <td th:text="${user.points}"></td>
-                <td>Away from Kanye's sight</td>
+                <td th:if="${user.points} &ge; 50000">Archangel of Kanye</td>
+
+                <td th:if="${user.points} &ge; 15000">Angel of Kanye</td>
+
+                <td th:if="${user.points} &gt; 8000">Mere Human</td>
+
+                <td th:if="${user.points} &le; 8000">Away from Kanye's sight</td>
             </tr>
         </table>        
     </div>
