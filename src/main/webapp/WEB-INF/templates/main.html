@@ -10,10 +10,9 @@
 
 </head>
 <body>
-
 <style th:if="${user.meterPercent} &gt; 50">
         body {
-            background-image: url('resources/roadtoheaven.jpg');
+            background-image: url('../resources/roadtoheaven.jpg');
             background-size: 115%;
             background-repeat: no-repeat;
         }
@@ -21,7 +20,7 @@
 
 <style th:unless="${user.meterPercent} &gt; 50">
         body {
-            background-image: url('resources/roadtohell.jpg');
+            background-image: url('../resources/roadtohell.jpg');
             background-size: 110%;
             background-repeat: no-repeat;
            }
@@ -57,29 +56,29 @@
 
                         <div th:switch="${user.meterPercent}" class="progress-value">
 
-                            <img th:case="40" src="resources/kanye-middle.png"/>
-                            <img th:case="35" src="resources/kanye-middle.png"/>
-                            <img th:case="50" src="resources/kanye-middle.png"/>
-                            <img th:case="45" src="resources/kanye-middle.png"/>
-                            <img th:case="55" src="resources/kanye-middle.png"/>
-                            <img th:case="60" src="resources/kanye-middle.png"/>
-                            <img th:case="65" src="resources/kanye-middle.png"/>
+                            <img th:case="40" src="../resources/kanye-middle.png"/>
+                            <img th:case="35" src="../resources/kanye-middle.png"/>
+                            <img th:case="50" src="../resources/kanye-middle.png"/>
+                            <img th:case="45" src="../resources/kanye-middle.png"/>
+                            <img th:case="55" src="../resources/kanye-middle.png"/>
+                            <img th:case="60" src="../resources/kanye-middle.png"/>
+                            <img th:case="65" src="../resources/kanye-middle.png"/>
 
-                            <img th:case="70" src="resources/kanye-heaven.png"/>
-                            <img th:case="75" src="resources/kanye-heaven.png"/>
-                            <img th:case="80" src="resources/kanye-heaven.png"/>
-                            <img th:case="85" src="resources/kanye-heaven.png"/>
-                            <img th:case="90" src="resources/kanye-heaven.png"/>
-                            <img th:case="95" src="resources/kanye-heaven.png"/>
-                            <img th:case="100" src="resources/kanye-heaven.png"/>
+                            <img th:case="70" src="../resources/kanye-heaven.png"/>
+                            <img th:case="75" src="../resources/kanye-heaven.png"/>
+                            <img th:case="80" src="../resources/kanye-heaven.png"/>
+                            <img th:case="85" src="../resources/kanye-heaven.png"/>
+                            <img th:case="90" src="../resources/kanye-heaven.png"/>
+                            <img th:case="95" src="../resources/kanye-heaven.png"/>
+                            <img th:case="100" src="../resources/kanye-heaven.png"/>
 
-                            <img th:case="30" src="resources/kanye-hell.png"/>
-                            <img th:case="25" src="resources/kanye-hell.png"/>
-                            <img th:case="20" src="resources/kanye-hell.png"/>
-                            <img th:case="15" src="resources/kanye-hell.png"/>
-                            <img th:case="10" src="resources/kanye-hell.png"/>
-                            <img th:case="5" src="resources/kanye-hell.png"/>
-                            <img th:case="0" src="resources/kanye-hell.png"/>
+                            <img th:case="30" src="../resources/kanye-hell.png"/>
+                            <img th:case="25" src="../resources/kanye-hell.png"/>
+                            <img th:case="20" src="../resources/kanye-hell.png"/>
+                            <img th:case="15" src="../resources/kanye-hell.png"/>
+                            <img th:case="10" src="../resources/kanye-hell.png"/>
+                            <img th:case="5" src="../resources/kanye-hell.png"/>
+                            <img th:case="0" src="../resources/kanye-hell.png"/>
 
                         </div>
 
