@@ -30,19 +30,13 @@
 
                         <div class="progress-value">
 
-                            <img th:if="${user.meterPercent} &gt; 20" src="resources/kanye-middle.png"/>
+                            <img th:if="${user.meterPercent} &gt; 30" src="resources/kanye-middle.png"/>
 
-                        </div>
 
-                        <div th:if="${user.meterPercent} &ge; 70" class="progress-value">
+                            <img th:if="${user.meterPercent} &ge; 70" src="resources/kanye-heaven.png"/>
 
-                            <img src="resources/kanye-heaven.png"/>
 
-                        </div>
-
-                        <div th:if="${user.meterPercent} &le; 30" class="progress-value">
-
-                            <img src="resources/kanye-hell.png"/>
+                            <img th:if="${user.meterPercent} &le; 30" src="resources/kanye-hell.png"/>
 
                         </div>
 
