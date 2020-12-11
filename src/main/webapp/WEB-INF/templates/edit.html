@@ -3,18 +3,18 @@
 <head lang="en">
     <thymeleaf th:replace="header :: header"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/edit.css">
+    <link rel="stylesheet" href="../css/edit.css">
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 
-    <img src="resources/editfont.png" alt="Sign Up Font">
+    <img src="../resources/editfont.png" alt="Sign Up Font">
 
     <div class="row justify-content-center">
         <div class="col-sm-8">
-            <form class="form-horizontal" th:object="${user}" th:action="@{'/edit/' + ${user.id}" method="post">
+            <form class="form-horizontal" th:object="${user}" th:action="@{'/edit/' + ${user.id}}" method="post">
 
                 <input type="hidden" th:field="*{id}"/>
 
