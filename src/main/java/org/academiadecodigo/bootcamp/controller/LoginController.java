@@ -140,9 +140,15 @@ public class LoginController {
         user.setPassword("academia");
         user.setEmail("pedro@gmail.com");
 
+        user.setMeterPercent(30);
+
 
         model.addAttribute(user);
 
         return "main";
     }
+
+
+
+
 }
