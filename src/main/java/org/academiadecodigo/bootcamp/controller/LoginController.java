@@ -89,7 +89,7 @@ public class LoginController {
 
 
     //authenticate user and get page of user
-    @RequestMapping(method = RequestMethod.POST, path = "/user")
+    @RequestMapping(method = RequestMethod.POST, path = "/login")
     public String authenticateUser(Model model, @ModelAttribute String username, @ModelAttribute String pass) {
 
         if (loginService.authenticateUser(username, pass)) {
