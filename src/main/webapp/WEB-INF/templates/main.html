@@ -37,7 +37,7 @@
 
 
     <ul>
-        <li><a th:href="@{/edit}">User Settings</a></li>
+        <li><a th:href="@{'/edit' + ${user.id}}">User Settings</a></li>
         <li><a th:href="@{'/challenges/' + ${user.id}}">Road to Heaven</a></li>
         <li><a class="button" href="#popup1">Current Challenge</a></li>
         <li><a th:href="@{'/upload/' + ${user.id}}">Submit Challenge</a></li>
