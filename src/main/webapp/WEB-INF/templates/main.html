@@ -9,6 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 </head>
 <body>
+    <style th:if="${user.meterPercent} &gt; 50">
+        background-image: ../resources/roadtoheaven.jpg;
+    </style>
+
+    <style th:unless="${user.meterPercent} &gt; 50">
+        background-image: ../resources/roadtohell.jpg;
+    </style>
+
+
 
     <ul>
         <li><a href="#user">User Settings</a></li>
