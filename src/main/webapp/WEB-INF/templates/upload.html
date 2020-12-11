@@ -54,7 +54,7 @@
                 <h2 th:text="${message}"/>
             </div>
 
-            <form method="POST" th:object="${user}" action="/upload/image">
+            <form method="GET" th:object="${user}" action="@{/upload/image}">
 
                 <div class="form-group">
                     <div class="custom-file">
