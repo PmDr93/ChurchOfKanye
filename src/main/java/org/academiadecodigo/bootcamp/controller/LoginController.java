@@ -45,6 +45,7 @@ public class LoginController {
         this.userToDto = userToDto;
     }
 
+
     //get sign up page
     @RequestMapping(method = RequestMethod.GET, path = "/signup")
     public String signUpButton(Model model) {
@@ -105,7 +106,7 @@ public class LoginController {
 
 
     //get user page
-    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
+    @RequestMapping(method = RequestMethod.GET, path = "/main/{id}")
     public String getUserPage(@PathVariable Integer id, Model model) {
 
         UserDto userDto = userToDto.convert(userService.getUser(id));
