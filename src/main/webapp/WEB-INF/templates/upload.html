@@ -34,6 +34,17 @@
              justify-content: center;
              min-height: 50vh;
              }
+             label {
+  background-color: indigo;
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+
              }
 
 
@@ -47,24 +58,9 @@
 <input type="hidden" th:field="*{id}">
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-8 mt-5">
-
-            <div th:if="${message}">
-                <h2 th:text="${message}"/>
-            </div>
-
-            <form method="GET" th:object="${user}" action="@{/upload/image}">
-
-                <div class="form-group">
-                    <div class="custom-file">
-                        <input type="file" name="file">
-                        <label class="custom-file-label" >Choose file</label>
-                    </div>
-                </div>
 
 
-            </form>
+            <input type="file" id="actual-btn" hidden/>
 
             <a role="button" class="btn btn-primary" th:href="@{/upload/image}">Submit form</a>
 
