@@ -58,7 +58,7 @@ public class UserController {
             return "edit";
         }
 
-        User updateUser = userService.getUser(id);
+        User updateUser = userService.getUser(user.getId());
         redirectAttributes.addFlashAttribute("lastAction", "Update successful to " + updateUser.getUsername());
 
         return "redirect:/main/" + updateUser.getId();
