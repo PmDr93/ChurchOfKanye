@@ -133,20 +133,19 @@ public class LoginController {
 
 
         model.addAttribute("user", userService.getUser(id));
-        model.addAttribute("actions", actionService.getAction(2));
+        model.addAttribute("actions", actionService.getAction(id));
 
         return "main";
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, path = "/main")
-    public String getMainPage(Model model) {
+    @RequestMapping(method = RequestMethod.GET, path = "/challenges")
+    public String getRanking(Model model) {
 
 
-        model.addAttribute("user", userService.getUser(1));
-        model.addAttribute("actions", actionService.getAction(1));
+        model.addAttribute("users", userService.getUsersList());
 
-        return "main";
+        return "ranking";
     }
 
 

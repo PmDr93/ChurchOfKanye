@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/ranking.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="resources/ranking.png" alt="Ranking font">
+    </header>
+    <div class="rankingtable">
+        <table class="pure-table" th:each="user : ${users}">
+            <tr >
+                <th>Username</th>
+                <th>Total Points</th>
+                <th>Ranking</th>
+            </tr>
+            <tr>
+                <td th:text="${user.username}"></td>
+                <td th:text="${user.points}"></td>
+                <td>Archangel of Kanye</td>
+            </tr>
+            <tr>
+                <td th:text="${user.username}"></td>
+                <td th:text="${user.points}"></td>
+                <td>Angel of Kanye</td>
+            </tr>
+            <tr>
+                <td th:text="${user.username}"></td>
+                <td th:text="${user.points}"></td>
+                <td>Mere Human</td>
+            </tr>
+            <tr>
+                <td th:text="${user.username}"></td>
+                <td th:text="${user.points}"></td>
+                <td>Away from Kanye's sight</td>
+            </tr>
+        </table>        
+    </div>
+    <br>
+    <div class="buttons">
+        <div class="back">
+            <a role="button" th:href="@{/main/{user.id}">Back to main page</a>
+        </div>
+    </div>
+
+</body>
+</html>
