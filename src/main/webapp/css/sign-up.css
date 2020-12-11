@@ -1,6 +1,6 @@
 body {
     background-color: #8C8D8F;
-    background-image: url('/resources/kanye-signup.png');
+    background-image: url('../resources/kanye-signup.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
