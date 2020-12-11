@@ -11,7 +11,7 @@ public interface UserServiceInterface {
 
     void add(User user);
 
-    void delete(Integer id);
+    void delete(String username);
 
     List<User> getUsersList();
 
