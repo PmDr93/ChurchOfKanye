@@ -101,7 +101,7 @@ public class LoginController {
 
 
             model.addAttribute("user", loginService.getUserOnLogin());
-            return "redirect:/main/" + loginService.getUserOnLogin().getId();
+            return "redirect:/" + loginService.getUserOnLogin().getId() + "/main";
         }
 
         return "redirect:/login";
@@ -128,11 +128,11 @@ public class LoginController {
 
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/main")
-    public String getMainPage(Model model) {
+    @RequestMapping(method = RequestMethod.GET, path = "/{id}/main")
+    public String getMainPage(Model model, @PathVariable Integer id) {
 
 
-        model.addAttribute("user", userService.getUser(1));
+        model.addAttribute("user", userService.getUser(id));
         model.addAttribute("actions", actionService.getAction(1));
 
         return "main";
