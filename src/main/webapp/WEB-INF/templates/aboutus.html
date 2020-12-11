@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -18,13 +18,9 @@
 
     <div class="buttons">
 
-    <div class="link">
-        <a href="https://www.youtube.com">Click here for our amazing video!</a>
-    </div>
+        <a class="link" href="https://www.youtube.com">Click here for our amazing video!</a>
 
-    <div class="back">
-        <a href="main.html">Back to main page</a>
-    </div>
+        <a class="back" th:href="@{/}">Back to main page</a>
 
     </div>
 

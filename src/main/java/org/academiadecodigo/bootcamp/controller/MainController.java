@@ -9,9 +9,9 @@ public class MainController {
 
 
     //Show main page
-    @RequestMapping(method = RequestMethod.GET, path = "/")
+    @RequestMapping(method = RequestMethod.GET, path = "/aboutus")
     public String homePage() {
-        return "index";
+        return "aboutus";
     }
 
 
