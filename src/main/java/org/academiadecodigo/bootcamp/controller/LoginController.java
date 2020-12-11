@@ -115,7 +115,7 @@ public class LoginController {
 
 
             model.addAttribute("user", loginService.getUserOnLogin());
-            return "redirect:/" + loginService.getUserOnLogin().getId() + "/main";
+            return "redirect:/main";
         }
 
         return "redirect:/login";
