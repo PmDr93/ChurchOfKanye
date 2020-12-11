@@ -12,17 +12,17 @@
     <style th:if="${user.meterPercent} &gt; 50">
         body {
             background-image: url('resources/roadtoheaven.jpg');
-            background-size: contain;
+            background-size: 70%;
         }
     </style>
 
     <style th:unless="${user.meterPercent} &gt; 50">
         body {
             background-image: url('resources/roadtohell.jpg');
-            background-size: contain;
+            background-size: 70%;
            }
 
-        h2 {
+        .container h2 {
             color: red;
         }
     </style>
@@ -93,7 +93,7 @@
         <div class="popup">
             <h2>Ready for the daily Kanye challenge?</h2>
             <a class="close" href="#">&times;</a>
-            <div th:text="${action}" class="content">
+            <div th:text="${actions}" class="content">
 
             </div>
         </div>
