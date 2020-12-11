@@ -7,6 +7,7 @@ import org.academiadecodigo.bootcamp.services.ActionService;
 import org.academiadecodigo.bootcamp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -29,14 +30,18 @@ public class MainController {
 
     //Show main page
     @RequestMapping(method = RequestMethod.GET, path = "/")
-    public String homePage() {
+    public String homePage(Model model) {
+
 
         bootStrap();
+
+        model.addAttribute("userlist", userService.getUsersList());
 
         return "index";
     }
 
     public void bootStrap() {
+
 
         User user = new User();
         User user2 = new User();

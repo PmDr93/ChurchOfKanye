@@ -53,6 +53,7 @@ li a:hover {
 .progress .progress-bar{
     box-shadow: none;
     border: none;
+    width: 80%;
     border-radius: 15px;
     position: relative;
     -webkit-animation: animate-positive 1s;
