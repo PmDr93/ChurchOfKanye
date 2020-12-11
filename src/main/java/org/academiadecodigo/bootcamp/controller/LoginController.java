@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Controller
 @SessionAttributes("user")
@@ -142,8 +145,9 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.GET, path = "/challenges/{id}")
     public String getRanking(Model model, @PathVariable Integer id) {
 
+        Set<User> userSet = new HashSet<>(userService.getUsersList());
 
-        model.addAttribute("users", userService.getUsersList());
+        model.addAttribute("users", userSet);
         model.addAttribute("id", userService.getUser(id));
 
         return "ranking";
