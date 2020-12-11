@@ -65,7 +65,7 @@ public class UserController {
     }
 
     //see the actions list the user has to do
-    @RequestMapping(method = RequestMethod.GET, path = "/list")
+    @RequestMapping(method = RequestMethod.GET, path = "/list1")
     public String actionsList(Model model, @PathVariable Integer id) {
 
         model.addAttribute("action5");
