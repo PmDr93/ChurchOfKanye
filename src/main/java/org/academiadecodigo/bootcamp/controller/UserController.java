@@ -77,7 +77,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST, path = "/upload/image")
     public String uploadImage(@ModelAttribute User user, Model model) {
 
-        User user1 = userService.getUser(user.getId());
+        User user1 = userService.getUser(user.getId() - 1);
         user1.setMeterPercent(user1.getMeterPercent() + 10);
 
         model.addAttribute(user1);
