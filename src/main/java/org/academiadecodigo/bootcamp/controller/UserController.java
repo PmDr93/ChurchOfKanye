@@ -51,7 +51,7 @@ public class UserController {
         return "edit";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/edituser/{id}")
+    @RequestMapping(method = RequestMethod.POST, path = "/edit/{id}")
     public String updateInfoUser(@ModelAttribute User user, @PathVariable Integer id, RedirectAttributes redirectAttributes, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
