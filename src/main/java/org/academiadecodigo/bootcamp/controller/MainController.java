@@ -15,8 +15,8 @@ public class MainController {
     }
 
 
-    //Show main page
-    @RequestMapping(method = RequestMethod.GET, path = "/aboutus")
+    //Show aboutus page
+    @RequestMapping(method = RequestMethod.GET, path = "/aboutchurchofkanye")
     public String aboutUs() {
         return "aboutus";
     }
