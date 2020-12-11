@@ -104,7 +104,7 @@ public class LoginController {
             return "redirect:/main/" + userDto.getId();
         }
 
-        return "login";
+        return "redirect:/login";
     }
 
 
