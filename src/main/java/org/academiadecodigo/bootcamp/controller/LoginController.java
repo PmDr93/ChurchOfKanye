@@ -114,6 +114,7 @@ public class LoginController {
 
 
         model.addAttribute("user", userService.getUser(id));
+        model.addAttribute("actions", actionService.getAction(1));
 
         return "main";
     }
