@@ -17,6 +17,7 @@
             <form class="form-horizontal" th:object="${user}" th:action="@{/signup}" method="post">
 
                 <input type="hidden" th:field="*{id}"/>
+                <input type="hidden" th:field="*{meterPercent}"/>
 
                 <div class="form-group" id="test">
                     <label class="col-sm-2 control-label">First Name:</label>
