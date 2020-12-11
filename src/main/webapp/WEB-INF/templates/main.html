@@ -12,12 +12,14 @@
     <style th:if="${user.meterPercent} &gt; 50">
         body {
             background-image: url('resources/roadtoheaven.jpg');
+            height: 100%;
         }
     </style>
 
     <style th:unless="${user.meterPercent} &gt; 50">
     body {
         background-image: url('resources/roadtohell.jpg');
+        height: 100%;
         }
     </style>
 
