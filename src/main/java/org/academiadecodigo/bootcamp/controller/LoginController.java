@@ -143,7 +143,7 @@ public class LoginController {
 //        user.setMeterPercent(80);
 
         model.addAttribute("user", userService.getUser(1));
-        model.addAttribute("userlist", userService.getUsersList().size());
+        model.addAttribute("userlist", userService.getUser(1).toString());
 
         return "main";
     }
