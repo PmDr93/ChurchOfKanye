@@ -139,11 +139,12 @@ public class LoginController {
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, path = "/challenges")
-    public String getRanking(Model model) {
+    @RequestMapping(method = RequestMethod.GET, path = "/challenges/{id}")
+    public String getRanking(Model model, @PathVariable Integer id) {
 
 
         model.addAttribute("users", userService.getUsersList());
+        model.addAttribute("id", userService.getUser(id));
 
         return "ranking";
     }
