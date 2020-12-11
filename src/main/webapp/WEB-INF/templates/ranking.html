@@ -21,16 +21,16 @@
                 <th>Total Points</th>
                 <th>Ranking</th>
             </tr>
-            <tr th:each="user : ${users}">
+            <tr th:switch="${user.points}" th:each="user : ${users}">
                 <td th:text="${user.username}"></td>
                 <td th:text="${user.points}"></td>
-                <td th:switch="60000">Archangel of Kanye</td>
+                <td th:case="60000">Archangel of Kanye</td>
 
-                <td th:switch="15000">Angel of Kanye</td>
+                <td th:case="15000">Angel of Kanye</td>
 
-                <td th:switch="9000">Mere Human</td>
+                <td th:case="9000">Mere Human</td>
 
-                <td th:switch="2000">Away from Kanye's sight</td>
+                <td th:case="2000">Away from Kanye's sight</td>
             </tr>
         </table>        
     </div>
