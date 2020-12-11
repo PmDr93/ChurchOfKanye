@@ -28,9 +28,9 @@
 
                     <div class="progress-bar meter" th:style="|width:${user.meterPercent}%; background:#fe3b3b;|">
 
-                        <div th:if="${user.meterPercent} &gt; 30" class="progress-value">
+                        <div class="progress-value">
 
-                            <img src="resources/kanye-middle.png"/>
+                            <img th:if="${user.meterPercent} &gt; 30" src="resources/kanye-middle.png"/>
 
                         </div>
 
