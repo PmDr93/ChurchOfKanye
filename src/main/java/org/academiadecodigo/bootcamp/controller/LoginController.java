@@ -83,6 +83,13 @@ public class LoginController {
         return "redirect:/main/" + user.getId();
     }
 
+    /**
+     *
+     *
+      * @param model
+     * @return
+     */
+
     //get page login
     @RequestMapping(method = RequestMethod.GET, path = "/login")
     public String getLoginPage(Model model) {
@@ -91,6 +98,13 @@ public class LoginController {
 
         return "login";
     }
+
+    /**
+     *
+     * @param model
+     * @param user
+     * @return
+     */
 
 
     //authenticate user and get page of user
@@ -107,7 +121,12 @@ public class LoginController {
         return "redirect:/login";
     }
 
-
+    /**
+     *
+     * @param id
+     * @param model
+     * @return
+     */
     //get user page
     @RequestMapping(method = RequestMethod.GET, path = "/main/{id}")
     public String getUserPage(@PathVariable Integer id, Model model) {
@@ -119,20 +138,12 @@ public class LoginController {
         return "main";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/list")
-    public String userList(Model model) {
 
-        model.addAttribute("users", userService.getUsersList());
-
-        return "list";
-
-    }
-
-    @RequestMapping(method = RequestMethod.GET, path = "/{id}/main")
-    public String getMainPage(Model model, @PathVariable Integer id) {
+    @RequestMapping(method = RequestMethod.GET, path = "/main")
+    public String getMainPage(Model model) {
 
 
-        model.addAttribute("user", userService.getUser(id));
+        model.addAttribute("user", userService.getUser(1));
         model.addAttribute("actions", actionService.getAction(1));
 
         return "main";

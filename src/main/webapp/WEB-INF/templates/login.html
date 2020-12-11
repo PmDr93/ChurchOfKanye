@@ -20,7 +20,7 @@
             <form class ="form-horizontal" th:object="${user}" th:action="@{/login}" method="post">
 
                 <input type="hidden" th:field="*{id}"/>
-                <input type="hidden" value="${user.meterPercent}" th:field="*{user.meterPercent}"/>
+                <input type="hidden" th:field="*{user.meterPercent}"/>
 
 
                 <div class="form-group" id="test">
@@ -44,7 +44,7 @@
                 <div class="row" id="test">
                     <div class="col-sm-3">
                         <button name="submit" type="submit" class="btn btn-warning">Enter</button>
-                        <button name="cancel" type="cancel" class="btn btn-danger" th:href="@{/}">Cancel</button>
+                        <a role="button" name="cancel" type="cancel" class="btn btn-danger" th:href="@{/}">Cancel</a>
                     </div>
                 </div>
             </form>
