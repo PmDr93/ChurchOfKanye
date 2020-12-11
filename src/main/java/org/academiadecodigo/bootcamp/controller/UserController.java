@@ -48,20 +48,20 @@ public class UserController {
 
         model.addAttribute("user", userService.getUser(id));
 
-        return "edituser";
+        return "edit";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/edituser/{id}")
     public String updateInfoUser(@ModelAttribute User user, @PathVariable Integer id, RedirectAttributes redirectAttributes, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            return "edituser";
+            return "edit";
         }
 
         User updateUser = userService.getUser(id);
         redirectAttributes.addFlashAttribute("lastAction", "Update successful to " + updateUser.getUsername());
 
-        return "redirect:/userpage";
+        return "redirect:/main/" + updateUser.getId();
     }
 
     //see the
