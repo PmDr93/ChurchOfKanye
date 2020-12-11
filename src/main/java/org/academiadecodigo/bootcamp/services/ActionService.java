@@ -19,7 +19,6 @@ public class ActionService {
         return actionMap;
     }
 
-    @Autowired
     public void setActionDaoJPA(ActionDaoJPA actionDaoJPA) {
         this.actionDaoJPA = actionDaoJPA;
     }
