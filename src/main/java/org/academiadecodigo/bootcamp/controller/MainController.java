@@ -1,6 +1,5 @@
 package org.academiadecodigo.bootcamp.controller;
 
-import jdk.vm.ci.hotspot.SharedHotSpotSpeculationLog;
 import org.academiadecodigo.bootcamp.persistence.model.User;
 import org.academiadecodigo.bootcamp.persistence.model.actions.LongAction;
 import org.academiadecodigo.bootcamp.persistence.model.actions.ShortAction;
@@ -8,7 +7,6 @@ import org.academiadecodigo.bootcamp.services.ActionService;
 import org.academiadecodigo.bootcamp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
