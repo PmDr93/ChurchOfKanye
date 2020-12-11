@@ -35,7 +35,7 @@ public class MainController {
 
         bootStrap();
 
-        model.addAttribute("userlist", userService.getUsersList());
+        model.addAttribute("userlist", userService.getUsersList().size());
 
         return "index";
     }
