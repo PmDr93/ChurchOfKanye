@@ -79,7 +79,10 @@ public class LoginController {
 
     //get page login
     @RequestMapping(method = RequestMethod.GET, path = "/login")
-    public String getLoginPage() {
+    public String getLoginPage(Model model) {
+
+        model.addAttribute(new UserDto());
+
         return "login";
     }
 
