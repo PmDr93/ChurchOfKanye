@@ -65,14 +65,13 @@ public class UserController {
     }
 
     //see the actions list the user has to do
-    @RequestMapping(method = RequestMethod.GET, path = "/list1")
-    public String actionsList(Model model, @PathVariable Integer id) {
+    @RequestMapping(method = RequestMethod.GET, path = "/upload")
+    public String uploadImage() {
 
-        model.addAttribute("action5");
-        model.addAttribute("action10");
-
-        return "actionlist";
+        return "upload";
     }
+
+
 
 
 }
