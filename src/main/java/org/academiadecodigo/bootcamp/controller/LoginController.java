@@ -56,7 +56,12 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.GET, path = "/signup")
     public String signUpButton(Model model) {
 
-        model.addAttribute("user", new UserDto());
+        Integer id = 4;
+
+        UserDto userDto = new UserDto();
+        userDto.setId(id + 1);
+
+        model.addAttribute("user", userDto);
 
         return "sign-up";
     }
