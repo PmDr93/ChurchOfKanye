@@ -37,6 +37,13 @@ public class MainController {
         return "index";
     }
 
+    //Show main page
+    @RequestMapping(method = RequestMethod.GET, path = "/aboutus")
+    public String aboutUsPage() {
+
+        return "aboutus";
+    }
+
     public void bootStrap() {
 
 
@@ -51,7 +58,7 @@ public class MainController {
         user.setUsername("pedro");
         user.setPassword("academia");
         user.setEmail("pedro@gmail.com");
-        user.setMeterPercent(30);
+        user.setMeterPercent(80);
 
         user2.setId(2);
         user2.setFirstName("André");
